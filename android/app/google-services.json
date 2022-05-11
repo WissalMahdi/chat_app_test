@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "433367697507",
+    "project_id": "messengerapp-85acc",
+    "storage_bucket": "messengerapp-85acc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433367697507:android:0ee72f61d1595032959056",
+        "android_client_info": {
+          "package_name": "com.example.chat_app_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433367697507-vqgp9hhgt4l1kp819uniim01j4jffims.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxmQSXlR7B-xvZePHp0zT9wBwYWy1eVJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433367697507-vqgp9hhgt4l1kp819uniim01j4jffims.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
