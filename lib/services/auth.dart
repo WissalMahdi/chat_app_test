@@ -1,14 +1,14 @@
 // ignore_for_file: unused_local_variable, unnecessary_null_comparison, prefer_const_constructors
 
 import 'package:chat_app_test/services/database.dart';
-import 'package:chat_app_test/views/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../helperfunctions/sharedpref_helper.dart';
+import '../Chat_Messenger/Home_Chat.dart';
+import '../Helper_Functions_SharedPref/sharedpref_helper.dart';
 
 class AuthMethods {
   final FirebaseAuth auth = FirebaseAuth.instance;

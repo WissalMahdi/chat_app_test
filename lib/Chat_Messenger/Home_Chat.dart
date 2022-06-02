@@ -1,13 +1,16 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, duplicate_ignore, avoid_unnecessary_containers, use_key_in_widget_constructors, avoid_print
 
-import 'package:chat_app_test/services/auth.dart';
+import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfilApprenant.dart';
+import 'package:chat_app_test/SplashScreen/splash_screen.dart';
+import 'package:chat_app_test/services/Auth.dart';
 import 'package:chat_app_test/services/database.dart';
-import 'package:chat_app_test/views/chatscreen.dart';
-import 'package:chat_app_test/views/signin.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image/network.dart';
-import '../helperfunctions/sharedpref_helper.dart';
+import '../Helper_Functions_SharedPref/sharedpref_helper.dart';
+import '../profileTest.dart';
+import 'UI_Chat.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -163,15 +166,70 @@ class _HomeState extends State<Home> {
         actions: [
           InkWell(
             onTap: (() {
-              AuthMethods().singOut().then((s) {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => SignIn()));
-              });
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      backgroundColor: Color.fromARGB(255, 20, 2, 18),
+                      title: Text('Log Out Of Trendy?',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold)),
+                      actions: [
+                        MaterialButton(
+                          child: Text(
+                            'No',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18.0,
+                                decoration: TextDecoration.underline,
+                                decorationColor: Colors.white),
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        MaterialButton(
+                          color: Colors.red,
+                          child: Text(
+                            'Yes',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          onPressed: () {
+                            AuthMethods().singOut().then((s) {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SplashScreen()));
+                            });
+                          },
+                        )
+                      ],
+                    );
+                  });
             }),
             child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Icon(Icons.exit_to_app)),
           ),
+          InkWell(
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => ProfileApprenant()));
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Icon(
+                Icons.person,
+              ),
+            ),
+          )
         ],
       ),
       body: Container(

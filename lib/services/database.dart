@@ -1,5 +1,6 @@
-import 'package:chat_app_test/helperfunctions/sharedpref_helper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../Helper_Functions_SharedPref/sharedpref_helper.dart';
 
 class DatabaseMethods {
   Future addUserInfoToDb(

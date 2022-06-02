@@ -1,8 +1,10 @@
-import 'package:chat_app_test/services/auth.dart';
-import 'package:chat_app_test/views/home.dart';
-import 'package:chat_app_test/views/signin.dart';
+import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/HomePageHelpers.dart';
+import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileHelpers.dart';
+import 'package:chat_app_test/SplashScreen/splash_screen.dart';
+import 'package:chat_app_test/services/fireBaseOperations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,13 +18,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+    return MultiProvider(
+        child: MaterialApp(
+          home: const SplashScreen(),
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
         ),
-        home: FutureBuilder(
+        providers: [
+          ChangeNotifierProvider(create: (_) => FireBaseOperations()),
+          ChangeNotifierProvider(create: (_) => ProfileHelpers()),
+          ChangeNotifierProvider(create: (_) => HomePageHelpers()),
+        ]);
+  }
+}    
+      /* home: FutureBuilder(
           future: AuthMethods().getCurrentUser(),
           builder: (context, AsyncSnapshot<dynamic> snapshot) {
             if (snapshot.hasData) {
@@ -31,6 +42,4 @@ class MyApp extends StatelessWidget {
               return const SignIn();
             }
           },
-        ));
-  }
-}
+        )*/

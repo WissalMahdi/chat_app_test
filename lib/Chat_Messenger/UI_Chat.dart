@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_const_constructors, unnecessary_string_escapes, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_local_variable, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, unnecessary_string_escapes, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_local_variable, use_key_in_widget_constructors, non_constant_identifier_names
 
-import 'package:chat_app_test/helperfunctions/sharedpref_helper.dart';
 import 'package:chat_app_test/services/database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:random_string/random_string.dart';
+
+import '../Helper_Functions_SharedPref/sharedpref_helper.dart';
 
 class ChatScreen extends StatefulWidget {
   final String chatWithUsername, name;
