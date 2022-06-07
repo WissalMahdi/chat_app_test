@@ -22,7 +22,13 @@ class HomePageHelpers with ChangeNotifier {
         backgroundColor: Color.fromARGB(255, 8, 7, 8),
         items: [
           CustomNavigationBarItem(icon: Icon(Icons.home)),
-          CustomNavigationBarItem(icon: Icon(Icons.search)),
+          CustomNavigationBarItem(
+            icon: Icon(
+              Icons.add_circle_outline,
+              //  size: 80,
+            ),
+          ),
+
           //CustomNavigationBarItem(icon: Icon(Icons.message_rounded)),
           CustomNavigationBarItem(icon: Icon(Icons.account_circle)),
         ]);

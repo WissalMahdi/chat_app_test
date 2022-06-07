@@ -1,8 +1,13 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_field, unused_element, unused_local_variable
+
+import 'dart:io';
 
 import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/Update_Profile/Edit_Profile.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart';
 import '../ProfilApprenant.dart';
 
 class ProfileView extends StatefulWidget {
@@ -13,6 +18,26 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
+  File? image;
+  Future pickImage() async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (image == null) return;
+      // final imageTemporary = File(image.path);
+      final imagePermanant = await saveImagePermanently(image.path);
+      setState(() => this.image = imagePermanant);
+    } on PlatformException catch (e) {
+      print('Failed to pick image : $e');
+    }
+  }
+
+  Future<File> saveImagePermanently(String imagePath) async {
+    final directory = await getApplicationDocumentsDirectory();
+    final name = basename(imagePath);
+    final image = File('${directory.path}/$name');
+    return File(imagePath).copy(image.path);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,44 +63,52 @@ class _ProfileViewState extends State<ProfileView> {
                         builder: (context) => ProfileApprenant()));
                   },
                   icon: Icon(Icons.close),
-                  padding: EdgeInsets.only(right: 300),
+                  padding: EdgeInsets.fromLTRB(20, 0, 400, 20),
                   iconSize: 35,
                   color: Colors.white,
                 ),
-
+                SizedBox(
+                  height: 10,
+                ),
                 Stack(
-                  // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    CircleAvatar(
-                      backgroundColor: Color(0xffE6E6E6),
-                      radius: 60.0,
-                      child: Icon(
-                        Icons.person,
-                        color: Color(0xffCCCCCC),
-                        size: 55,
-                      ),
-                    ),
+                    image != null
+                        ? ClipOval(
+                            child: Image.file(
+                            image!,
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.cover,
+                          ))
+                        : ClipOval(
+                            child: Image.network(
+                            'https://i.stack.imgur.com/l60Hf.png',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.cover,
+                          )),
                     Positioned(
-                        left: 75,
+                        left: 95,
                         bottom: -10,
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: (() => pickImage()),
                           icon: Icon(
                             Icons.add_a_photo,
                             size: 30,
-                            color: Color.fromARGB(255, 78, 76, 76),
+                            color: Color.fromARGB(255, 255, 255, 255),
                           ),
                         ))
                   ],
                 )
+
                 // ignore: prefer_const_constructors
               ],
             ),
           )),
           Expanded(
-            flex: 2,
+            flex: 1,
             child: EditProfile(),
-          )
+          ),
         ],
       ),
     );

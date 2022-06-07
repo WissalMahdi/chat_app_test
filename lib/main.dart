@@ -1,4 +1,6 @@
 import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/HomePageHelpers.dart';
+import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Home_Helpers.dart';
+import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/UploadPost.dart';
 import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileHelpers.dart';
 import 'package:chat_app_test/SplashScreen/splash_screen.dart';
 import 'package:chat_app_test/services/fireBaseOperations.dart';
@@ -19,14 +21,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
+        // ignore: prefer_const_constructors
         child: MaterialApp(
           home: const SplashScreen(),
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
         ),
         providers: [
+          ChangeNotifierProvider(create: (_) => HomeHelpers()),
+          ChangeNotifierProvider(create: (_) => UploadPost()),
           ChangeNotifierProvider(create: (_) => FireBaseOperations()),
           ChangeNotifierProvider(create: (_) => ProfileHelpers()),
           ChangeNotifierProvider(create: (_) => HomePageHelpers()),

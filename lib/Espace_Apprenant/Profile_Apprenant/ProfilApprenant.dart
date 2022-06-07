@@ -5,6 +5,8 @@ import 'package:chat_app_test/profileTest.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../Acceuil_Apprenant/Home_Apprenant.dart';
+import '../Acceuil_Apprenant/UI_Espace_Apprenant.dart';
 import 'Update_Profile/ProfileView_UI.dart';
 
 class ProfileApprenant extends StatelessWidget {
@@ -17,12 +19,11 @@ class ProfileApprenant extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-          onPressed: (() {}),
-          icon: Icon(
-            Icons.settings_outlined,
-            color: Color.fromARGB(255, 18, 19, 20),
-          ),
-        ),
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => EspaceApprenant()));
+            }),
         actions: [
           IconButton(
             icon: Icon(

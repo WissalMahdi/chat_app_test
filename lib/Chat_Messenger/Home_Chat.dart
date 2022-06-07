@@ -8,6 +8,7 @@ import 'package:chat_app_test/services/database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image/network.dart';
+import '../Espace_Apprenant/Acceuil_Apprenant/Home_Apprenant.dart';
 import '../Helper_Functions_SharedPref/sharedpref_helper.dart';
 import '../profileTest.dart';
 import 'UI_Chat.dart';
@@ -162,6 +163,12 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text('Messenger Clone'),
         backgroundColor: Color.fromARGB(255, 53, 51, 51),
+        leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => HomeApprenant()));
+            }),
         // ignore: prefer_const_literals_to_create_immutables
         actions: [
           InkWell(
@@ -270,6 +277,8 @@ class _HomeState extends State<Home> {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: "Search here...",
+                            hintStyle: TextStyle(
+                                color: Color.fromARGB(255, 85, 81, 81)),
                           ),
                         )),
                         GestureDetector(
