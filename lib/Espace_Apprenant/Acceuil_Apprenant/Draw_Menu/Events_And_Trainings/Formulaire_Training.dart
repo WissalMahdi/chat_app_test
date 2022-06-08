@@ -89,7 +89,7 @@ class FlutterDatePickerExample extends StatelessWidget {
                                 data: Theme.of(context).copyWith(
                                     colorScheme: const ColorScheme.light(
                                       primary: Colors.blueGrey,
-                                      onSurface: AppColors.blackCoffee,
+                                      onSurface: Color.fromARGB(255, 255, 255, 255),
                                     )
                                 ),
                                 child: child!,

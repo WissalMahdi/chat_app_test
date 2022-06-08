@@ -1,10 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Results/Results.dart';
+import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Schedule_Time/Time_Schedule.dart';
 import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Home_Helpers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../Services/Auth.dart';
+import '../../SplashScreen/splash_screen.dart';
 import '../Profile_Apprenant/ProfilApprenant.dart';
 import 'Draw_Menu/Events_And_Trainings/Events_Calendar.dart';
 import 'Draw_Menu/Grades/Grades.dart';
@@ -88,7 +92,8 @@ class NavigationDrawer extends StatelessWidget {
           children: [
             ListTile(
               leading: const Icon(Icons.event),
-              title: const Text('Events And Trainings'),
+              title: const Text('Events And Trainings',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
               onTap: () {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
                     builder: (context) => CustomTableCalendar()));
@@ -96,7 +101,8 @@ class NavigationDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.grading),
-              title: const Text('Grades'),
+              title: const Text('Grades 2022/2023',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => Grades()));
@@ -104,26 +110,86 @@ class NavigationDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.grade_outlined),
-              title: const Text('Results'),
-              onTap: () {},
+              title: const Text(
+                'Results 2022/2023',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => Results()));
+              },
             ),
             ListTile(
               leading: const Icon(Icons.tab_outlined),
-              title: const Text('Time Schedule'),
-              onTap: () {},
+              title: const Text('Time Schedule 2022/2023',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => TimeSchedule()));
+              },
             ),
             const Divider(
               color: Colors.black,
             ),
             ListTile(
               leading: const Icon(Icons.info),
-              title: const Text('About'),
+              title: const Text('About',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
               onTap: () {},
             ),
             ListTile(
               leading: const Icon(Icons.logout_outlined),
-              title: const Text('Log Out'),
-              onTap: () {},
+              title: const Text('Log Out',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        backgroundColor: Color.fromARGB(255, 20, 2, 18),
+                        title: Text('Log Out Of Trendy?',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold)),
+                        actions: [
+                          MaterialButton(
+                            child: Text(
+                              'No',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18.0,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: Colors.white),
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                          MaterialButton(
+                            color: Colors.red,
+                            child: Text(
+                              'Yes',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                            onPressed: () {
+                              AuthMethods().singOut().then((s) {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SplashScreen()));
+                              });
+                            },
+                          )
+                        ],
+                      );
+                    });
+              },
             ),
           ],
         ),

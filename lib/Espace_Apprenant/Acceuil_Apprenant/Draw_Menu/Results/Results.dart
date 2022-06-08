@@ -4,17 +4,19 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../UI_Espace_Apprenant.dart';
-import 'Grades_Files_Page.dart';
+import 'Results_Files_Page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class Grades extends StatelessWidget {
+class Results extends StatelessWidget {
+  const Results({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Grades',
+      title: 'Results',
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
@@ -31,11 +33,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 2, 5, 8),
+        //backgroundColor: Color.fromARGB(255, 48, 47, 44),
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 80, 77, 80),
           title: Text(
-            "Grades",
+            "Results",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           leading: IconButton(
@@ -52,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 88, 85, 77),
+                color: Color.fromARGB(255, 40, 4, 54),
                 child: ListTile(
                   minVerticalPadding: 25,
                   title: Text("Maintenance Industrielle (MID)",
@@ -62,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 75, 64, 74),
+                color: Color.fromARGB(255, 61, 16, 57),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("1ére Année MID",
@@ -70,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => ResultsFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
@@ -79,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 139, 122, 100),
+                color: Color.fromARGB(255, 100, 53, 100),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("2éme Année MID",
@@ -87,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => ResultsFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
@@ -96,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 117, 113, 107),
+                color: Color.fromARGB(255, 69, 28, 73),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("3éme Année MID",
@@ -104,14 +106,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => ResultsFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
                   },
                 )),
             const Divider(
-              color: Color.fromARGB(255, 233, 229, 229),
+              color: Color.fromARGB(255, 5, 4, 4),
               thickness: 1.5,
               indent: 50,
               endIndent: 50,
@@ -119,8 +121,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(
-                    255, 88, 85, 77), //  margin: EdgeInsets.all(10),
+                color: Color.fromARGB(255, 40, 4, 54),
+                //  margin: EdgeInsets.all(10),
                 child: ListTile(
                   minVerticalPadding: 25,
                   title: Text("Electricité Et Maintenance (EM)",
@@ -130,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 75, 64, 74),
+                color: Color.fromARGB(255, 61, 16, 57),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("1ére Année EM",
@@ -138,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => ResultsFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
@@ -147,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 139, 122, 100),
+                color: Color.fromARGB(255, 100, 53, 100),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("2éme Année EM",
@@ -155,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => ResultsFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
@@ -164,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 117, 113, 107),
+                color: Color.fromARGB(255, 69, 28, 73),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("3éme Année EM",
@@ -172,14 +174,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => ResultsFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
                   },
                 )),
             const Divider(
-              color: Color.fromARGB(255, 233, 229, 229),
+              color: Color.fromARGB(255, 12, 11, 11),
               thickness: 1.5,
               indent: 50,
               endIndent: 50,
@@ -187,8 +189,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(
-                    255, 88, 85, 77), //  margin: EdgeInsets.all(10),
+                color: Color.fromARGB(255, 40, 4, 54),
+                //  margin: EdgeInsets.all(10),
                 child: ListTile(
                   minVerticalPadding: 25,
                   title: Text("Climatisation Et Plomberie (CEP)",
@@ -198,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 75, 64, 74),
+                color: Color.fromARGB(255, 61, 16, 57),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                     title: Text("1ére Année CEP",
@@ -206,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontWeight: FontWeight.bold, color: Colors.white)),
                     onTap: () {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => FilesPage(
+                          builder: (context) => ResultsFilesPage(
                                 files: const [],
                                 onOpenedFile: (PlatformFile value) {},
                               )));
@@ -214,7 +216,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 139, 122, 100),
+                color: Color.fromARGB(255, 100, 53, 100),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("2éme Année CEP",
@@ -222,7 +224,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => ResultsFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
@@ -231,7 +233,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 117, 113, 107),
+                color: Color.fromARGB(255, 69, 28, 73),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("3éme Année CEP",
@@ -239,14 +241,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => ResultsFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
                   },
                 )),
             const Divider(
-              color: Color.fromARGB(255, 233, 229, 229),
+              color: Color.fromARGB(255, 10, 9, 9),
               thickness: 1.5,
               indent: 50,
               endIndent: 50,

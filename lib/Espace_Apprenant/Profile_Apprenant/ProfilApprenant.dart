@@ -73,7 +73,8 @@ class ProfileApprenant extends StatelessWidget {
                 return new Column(
                   children: [
                     Provider.of<ProfileHelpers>(context, listen: false)
-                        .headerProfile(context, snapshot.data!),
+                        .headerProfile(
+                            context, snapshot.data as DocumentSnapshot),
                     //    Provider.of<ProfileHelpers>(context, listen: false)
                     //      .middleProfile(context, snapshot),
                     Provider.of<ProfileHelpers>(context, listen: false)
