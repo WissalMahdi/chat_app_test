@@ -3,7 +3,6 @@
 import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Results/Results.dart';
 import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Schedule_Time/Time_Schedule.dart';
 import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Home_Helpers.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,16 +17,16 @@ class HomeApprenant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 49, 48, 48),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: Provider.of<HomeHelpers>(context, listen: false).appBar(context),
       ),
+      body: Provider.of<HomeHelpers>(context, listen: false).HomeBody(context),
       drawer: const NavigationDrawer(),
     );
   }
 }
-
-User? userData = FirebaseAuth.instance.currentUser!;
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({Key? key}) : super(key: key);

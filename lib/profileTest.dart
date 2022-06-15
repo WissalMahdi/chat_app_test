@@ -42,6 +42,7 @@ class _ApprenantState extends State<Apprenant> {
   }*/
   User? user;
   String? displayName;
+
   Future<void> inputData() async {
     User? userData = FirebaseAuth.instance.currentUser!;
     setState(() {
@@ -112,3 +113,7 @@ class _ApprenantState extends State<Apprenant> {
   //firebaseUser = FirebaseAuth.instance.currentUser!.uid;
 
 }
+
+
+             // Sized Box
+                               

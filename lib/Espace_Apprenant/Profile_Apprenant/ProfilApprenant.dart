@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new, sized_box_for_whitespace
 
 import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileHelpers.dart';
-import 'package:chat_app_test/profileTest.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../Acceuil_Apprenant/Home_Apprenant.dart';
 import '../Acceuil_Apprenant/UI_Espace_Apprenant.dart';
 import 'Update_Profile/ProfileView_UI.dart';
 

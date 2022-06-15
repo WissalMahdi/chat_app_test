@@ -39,7 +39,8 @@ class ProfileHelpers with ChangeNotifier {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    ' ${userData?.displayName}',
+                    'Cfm Nabeul',
+                    // ' ${userData?.displayName}',
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -205,7 +206,7 @@ class ProfileHelpers with ChangeNotifier {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        child: Image.asset('images/test.jpg'),
+        // child: Image.asset('images/test.jpg'),
         height: MediaQuery.of(context).size.height * 0.63,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
