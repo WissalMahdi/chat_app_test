@@ -1,16 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, duplicate_ignore, avoid_unnecessary_containers, use_key_in_widget_constructors, avoid_print
 
-import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfilApprenant.dart';
+import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/Home_Admin.dart';
+import 'package:chat_app_test/Espace_Admin/Profile_Admin/ProfilAdmin.dart';
 import 'package:chat_app_test/SplashScreen/splash_screen.dart';
 import 'package:chat_app_test/services/Auth.dart';
 import 'package:chat_app_test/services/database.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_image/network.dart';
-import '../Espace_Apprenant/Acceuil_Apprenant/Home_Apprenant.dart';
 import '../Helper_Functions_SharedPref/sharedpref_helper.dart';
-import '../profileTest.dart';
 import 'UI_Chat.dart';
 
 class Home extends StatefulWidget {
@@ -167,7 +165,7 @@ class _HomeState extends State<Home> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => HomeApprenant()));
+                  MaterialPageRoute(builder: (context) => HomeAdmin()));
             }),
         // ignore: prefer_const_literals_to_create_immutables
         actions: [
@@ -225,18 +223,6 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Icon(Icons.exit_to_app)),
           ),
-          InkWell(
-            onTap: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => ProfileApprenant()));
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Icon(
-                Icons.person,
-              ),
-            ),
-          )
         ],
       ),
       body: Container(

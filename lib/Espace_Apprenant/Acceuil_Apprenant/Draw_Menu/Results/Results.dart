@@ -1,262 +1,80 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: unnecessary_const, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../UI_Espace_Apprenant.dart';
-import 'Results_Files_Page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Results());
 }
 
-class Results extends StatelessWidget {
-  const Results({Key? key}) : super(key: key);
+class Results extends StatefulWidget {
+  @override
+  _TableExample createState() => _TableExample();
+}
 
+class _TableExample extends State<Results> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Results',
-      home: MyHomePage(),
       debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        //backgroundColor: Color.fromARGB(255, 48, 47, 44),
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 80, 77, 80),
-          title: Text(
-            "Results",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      home: Scaffold(
+          backgroundColor: Color.fromARGB(255, 39, 38, 38),
+          appBar: AppBar(
+            backgroundColor: Color.fromARGB(255, 102, 10, 64),
+            title: const Text('Flutter Table Example'),
+            leading: IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const EspaceApprenant()));
+                }),
           ),
-          leading: IconButton(
-              icon: const Icon(Icons.arrow_back),
-              iconSize: 25,
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => EspaceApprenant()));
-              }),
-        ),
-        body: ListView(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 40, 4, 54),
-                child: ListTile(
-                  minVerticalPadding: 25,
-                  title: Text("Maintenance Industrielle (MID)",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 61, 16, 57),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("1ére Année MID",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ResultsFilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 100, 53, 100),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("2éme Année MID",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ResultsFilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 69, 28, 73),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("3éme Année MID",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ResultsFilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            const Divider(
-              color: Color.fromARGB(255, 5, 4, 4),
-              thickness: 1.5,
-              indent: 50,
-              endIndent: 50,
+          body: Center(
+              child: Column(children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                'Mouhamed Becha (EI 21)',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
             ),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 40, 4, 54),
-                //  margin: EdgeInsets.all(10),
-                child: ListTile(
-                  minVerticalPadding: 25,
-                  title: Text("Electricité Et Maintenance (EM)",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 61, 16, 57),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("1ére Année EM",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ResultsFilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 100, 53, 100),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("2éme Année EM",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ResultsFilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 69, 28, 73),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("3éme Année EM",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ResultsFilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            const Divider(
-              color: Color.fromARGB(255, 12, 11, 11),
-              thickness: 1.5,
-              indent: 50,
-              endIndent: 50,
+            Container(
+              margin: const EdgeInsets.all(20),
+              child: Table(
+                defaultColumnWidth: const FixedColumnWidth(250.0),
+                border: TableBorder.all(
+                    color: Color.fromARGB(255, 243, 241, 241),
+                    style: BorderStyle.solid,
+                    width: 2),
+                children: [
+                  TableRow(children: [
+                    // ignore: prefer_const_literals_to_create_immutables
+                    Column(children: [
+                      const Text('Résultat',
+                          style: const TextStyle(
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                      SizedBox(
+                        height: 20,
+                      )
+                    ]),
+                  ]),
+                  TableRow(children: [
+                    Column(children: [
+                      const Text('14.6',
+                          style: const TextStyle(
+                              fontSize: 20.0, color: Colors.white)),
+                      SizedBox(
+                        height: 20,
+                      )
+                    ]),
+                  ]),
+                ],
+              ),
             ),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 40, 4, 54),
-                //  margin: EdgeInsets.all(10),
-                child: ListTile(
-                  minVerticalPadding: 25,
-                  title: Text("Climatisation Et Plomberie (CEP)",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 61, 16, 57),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                    title: Text("1ére Année CEP",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white)),
-                    onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => ResultsFilesPage(
-                                files: const [],
-                                onOpenedFile: (PlatformFile value) {},
-                              )));
-                    })),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 100, 53, 100),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("2éme Année CEP",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ResultsFilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 69, 28, 73),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("3éme Année CEP",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ResultsFilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            const Divider(
-              color: Color.fromARGB(255, 10, 9, 9),
-              thickness: 1.5,
-              indent: 50,
-              endIndent: 50,
-            ),
-          ],
-          padding: EdgeInsets.only(top: 20),
-          shrinkWrap: true,
-          // itemExtent: 50,
-        ));
+          ]))),
+    );
   }
 }

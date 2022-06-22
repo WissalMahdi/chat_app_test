@@ -7,7 +7,6 @@ import 'package:chat_app_test/Home/Search/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../Espace_Admin/Acceuil_Admin/HomePageHelpers.dart';
 import 'HomePageHelpers.dart';
 
 void main() {
@@ -23,19 +22,19 @@ class MyApp extends StatelessWidget {
       // Hide the debug banner
       debugShowCheckedModeBanner: false,
       title: 'Espace Apprenant',
-      home: EspaceApprenant(),
+      home: EspaceFormateur(),
     );
   }
 }
 
-class EspaceApprenant extends StatefulWidget {
-  const EspaceApprenant({Key? key}) : super(key: key);
+class EspaceFormateur extends StatefulWidget {
+  const EspaceFormateur({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<EspaceApprenant> {
+class _HomePageState extends State<EspaceFormateur> {
   final PageController apprenantPageController = PageController();
   int pageIndeex = 0;
 
@@ -54,7 +53,7 @@ class _HomePageState extends State<EspaceApprenant> {
           },
         ),
         bottomNavigationBar:
-            Provider.of<HomePageHelpersApprenant>(context, listen: false)
+            Provider.of<HomePageHelpersFormateur>(context, listen: false)
                 .bottomNavBaar(pageIndeex, apprenantPageController));
   }
 }

@@ -3,15 +3,15 @@
 import 'dart:ffi';
 
 import 'package:chat_app_test/Authentification/resetpassword.dart';
+import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/UI_Espace_Apprenant.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import '../Colors_Config/palette.dart';
-import '../Espace_Apprenant/Acceuil_Apprenant/UI_Espace_Apprenant.dart';
-import '../Home/Espace_formateur.dart';
-import '../Home/Espace_Admin.dart';
+import '../Espace_Admin/Acceuil_Admin/UI_Espace_Admin.dart';
+import '../Espace_Formateur/Acceuil_Formateur/UI_Espace_Formateur.dart';
 import '../services/registration.dart';
 
 class LoginSignupScreen extends StatefulWidget {

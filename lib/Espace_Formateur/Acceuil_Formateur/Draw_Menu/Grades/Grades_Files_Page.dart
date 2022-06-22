@@ -2,28 +2,29 @@
 
 import 'dart:io';
 import 'dart:math';
+import 'dart:ui';
 
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Results/Results.dart';
+import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Grades/Grades.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 
-class ResultsFilesPage extends StatefulWidget {
+class FilesPage extends StatefulWidget {
   final List<PlatformFile> files;
   final ValueChanged<PlatformFile> onOpenedFile;
 
-  const ResultsFilesPage({
+  const FilesPage({
     Key? key,
     required this.files,
     required this.onOpenedFile,
   }) : super(key: key);
 
   @override
-  State<ResultsFilesPage> createState() => _FilesPageState();
+  State<FilesPage> createState() => _FilesPageState();
 }
 
-class _FilesPageState extends State<ResultsFilesPage> {
+class _FilesPageState extends State<FilesPage> {
   Random _random = Random();
 
   List<List<Color>> gradientColors = [];
@@ -71,14 +72,14 @@ class _FilesPageState extends State<ResultsFilesPage> {
       backgroundColor: const Color.fromARGB(255, 206, 204, 204),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 80, 77, 80),
-        title: const Text("Add Results",
+        title: const Text("Add Grades",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             iconSize: 25,
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => Results()));
+                  MaterialPageRoute(builder: (context) => Grades()));
             }),
         centerTitle: true,
       ),
@@ -120,7 +121,7 @@ class _FilesPageState extends State<ResultsFilesPage> {
 
   void openFiles(List<PlatformFile> files) =>
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => ResultsFilesPage(
+          builder: (context) => FilesPage(
                 files: files,
                 onOpenedFile: openFile,
               )));

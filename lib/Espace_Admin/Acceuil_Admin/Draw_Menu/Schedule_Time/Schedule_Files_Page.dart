@@ -2,28 +2,28 @@
 
 import 'dart:io';
 import 'dart:math';
-
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Results/Results.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 
-class ResultsFilesPage extends StatefulWidget {
+import 'Time_Schedule.dart';
+
+class ScheduleFilePage extends StatefulWidget {
   final List<PlatformFile> files;
   final ValueChanged<PlatformFile> onOpenedFile;
 
-  const ResultsFilesPage({
+  const ScheduleFilePage({
     Key? key,
     required this.files,
     required this.onOpenedFile,
   }) : super(key: key);
 
   @override
-  State<ResultsFilesPage> createState() => _FilesPageState();
+  State<ScheduleFilePage> createState() => _FilesPageState();
 }
 
-class _FilesPageState extends State<ResultsFilesPage> {
+class _FilesPageState extends State<ScheduleFilePage> {
   Random _random = Random();
 
   List<List<Color>> gradientColors = [];
@@ -78,7 +78,7 @@ class _FilesPageState extends State<ResultsFilesPage> {
             iconSize: 25,
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => Results()));
+                  MaterialPageRoute(builder: (context) => TimeSchedule()));
             }),
         centerTitle: true,
       ),
@@ -120,7 +120,7 @@ class _FilesPageState extends State<ResultsFilesPage> {
 
   void openFiles(List<PlatformFile> files) =>
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => ResultsFilesPage(
+          builder: (context) => ScheduleFilePage(
                 files: files,
                 onOpenedFile: openFile,
               )));

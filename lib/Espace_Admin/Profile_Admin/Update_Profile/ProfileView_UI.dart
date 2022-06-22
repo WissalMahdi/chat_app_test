@@ -2,12 +2,12 @@
 
 import 'dart:io';
 
-import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileApprenant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
+import '../ProfilAdmin.dart';
 import 'Edit_Profile.dart';
 
 class ProfileView extends StatefulWidget {
@@ -60,7 +60,7 @@ class _ProfileViewState extends State<ProfileView> {
                 IconButton(
                   onPressed: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ProfileApprenant()));
+                        builder: (context) => ProfileAdmin()));
                   },
                   icon: Icon(Icons.close),
                   padding: EdgeInsets.fromLTRB(20, 0, 400, 20),

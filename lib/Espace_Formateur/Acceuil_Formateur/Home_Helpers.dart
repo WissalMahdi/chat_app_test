@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
-class HomeHelpersApprenant with ChangeNotifier {
+class HomeHelpersFormateur with ChangeNotifier {
   User? userData = FirebaseAuth.instance.currentUser!;
 
   Widget appBar(BuildContext context) {

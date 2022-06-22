@@ -3,8 +3,8 @@ import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomePageHelpersApprenant with ChangeNotifier {
-  Widget bottomNavBaar(int index, PageController pageController) {
+class HomePageHelpers with ChangeNotifier {
+  Widget bottomNavBar(int index, PageController pageController) {
     return CustomNavigationBar(
         currentIndex: index,
         bubbleCurve: Curves.bounceIn,
@@ -19,7 +19,7 @@ class HomePageHelpersApprenant with ChangeNotifier {
           pageController.jumpToPage(val);
           notifyListeners();
         },
-        backgroundColor: Color.fromARGB(255, 15, 15, 15),
+        backgroundColor: Color.fromARGB(255, 8, 7, 8),
         items: [
           CustomNavigationBarItem(icon: Icon(Icons.home)),
           CustomNavigationBarItem(

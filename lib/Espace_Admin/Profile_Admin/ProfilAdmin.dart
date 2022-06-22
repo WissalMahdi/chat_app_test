@@ -1,14 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new, sized_box_for_whitespace
 
-import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileHelpers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../Acceuil_Apprenant/UI_Espace_Apprenant.dart';
+import '../Acceuil_Admin/UI_Espace_Admin.dart';
+import 'ProfileHelpers.dart';
 import 'Update_Profile/ProfileView_UI.dart';
 
-class ProfileApprenant extends StatelessWidget {
-  const ProfileApprenant({Key? key}) : super(key: key);
+class ProfileAdmin extends StatelessWidget {
+  const ProfileAdmin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class ProfileApprenant extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => EspaceApprenant()));
+                  MaterialPageRoute(builder: (context) => EspaceAdmin()));
             }),
         actions: [
           IconButton(
@@ -59,7 +59,7 @@ class ProfileApprenant extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: StreamBuilder<DocumentSnapshot>(
             stream: FirebaseFirestore.instance
-                .collection('Apprenants')
+                .collection('Admin')
                 .doc()
                 .snapshots(),
             builder: (context, snapshot) {

@@ -1,12 +1,10 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore, avoid_unnecessary_containers, sized_box_for_whitespace
 
-import 'package:chat_app_test/profileTest.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-class ProfileHelpersApprenant with ChangeNotifier {
+class ProfileHelpersFormateur with ChangeNotifier {
   String name = "";
 
   User? userData = FirebaseAuth.instance.currentUser!;

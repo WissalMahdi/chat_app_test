@@ -3,14 +3,15 @@
 import 'dart:io';
 
 import 'package:chat_app_test/Chat_Messenger/Google_Signin.dart';
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/UploadPost.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
-class HomeHelpersApprenant with ChangeNotifier {
+import 'UploadPost.dart';
+
+class HomeHelpers with ChangeNotifier {
   User? userData = FirebaseAuth.instance.currentUser!;
 
   Widget appBar(BuildContext context) {
@@ -21,7 +22,7 @@ class HomeHelpersApprenant with ChangeNotifier {
       actions: [
         IconButton(
             onPressed: (() {
-              Provider.of<UploadPostApprenant>(context, listen: false)
+              Provider.of<UploadPost>(context, listen: false)
                   .selectPostImageType(context);
             }),
             icon: Icon(
@@ -124,8 +125,7 @@ class HomeHelpersApprenant with ChangeNotifier {
                         children: [
                           Container(
                               child: Text(
-                            Provider.of<UploadPostApprenant>(context,
-                                    listen: false)
+                            Provider.of<UploadPost>(context, listen: false)
                                 .captionController
                                 .text,
                             style: TextStyle(

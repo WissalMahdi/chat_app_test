@@ -1,33 +1,28 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Courses/course.dart';
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Events_And_Training/Events_Calendar.dart';
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Grades/Grades.dart';
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Results/Results.dart';
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Schedule_Time/Time_Schedule.dart';
-import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileApprenant.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../Services/Auth.dart';
 import '../../SplashScreen/splash_screen.dart';
-
+import '../Profile_Admin/ProfilAdmin.dart';
+import 'Draw_Menu/Events_And_Trainings/Events_Calendar.dart';
+import 'Draw_Menu/Grades/Grades.dart';
+import 'Draw_Menu/Results/Results.dart';
 import 'Draw_Menu/Schedule_Time/Time_Schedule.dart';
 import 'Home_Helpers.dart';
 
 // ignore: use_key_in_widget_constructors
-class HomeApprenant extends StatelessWidget {
+class HomeAdmin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 49, 48, 48),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
-        child: Provider.of<HomeHelpersApprenant>(context, listen: false)
-            .appBar(context),
+        child: Provider.of<HomeHelpers>(context, listen: false).appBar(context),
       ),
-      body: Provider.of<HomeHelpersApprenant>(context, listen: false)
-          .HomeBody(context),
+      body: Provider.of<HomeHelpers>(context, listen: false).HomeBody(context),
       drawer: const NavigationDrawer(),
     );
   }
@@ -53,7 +48,7 @@ class NavigationDrawer extends StatelessWidget {
         child: InkWell(
           onTap: () {
             Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => ProfileApprenant()));
+                MaterialPageRoute(builder: (context) => ProfileAdmin()));
           },
           child: Container(
             padding: EdgeInsets.only(
@@ -105,7 +100,7 @@ class NavigationDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.grading),
-              title: const Text('My Grades ',
+              title: const Text('Grades 2022/2023',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               onTap: () {
                 Navigator.of(context).pushReplacement(
@@ -115,7 +110,7 @@ class NavigationDrawer extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.grade_outlined),
               title: const Text(
-                'My Result',
+                'Results 2022/2023',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               onTap: () {
@@ -125,20 +120,11 @@ class NavigationDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.tab_outlined),
-              title: const Text('My Time Schedule',
+              title: const Text('Time Schedule 2022/2023',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => TimeSchedule()));
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.collections_outlined),
-              title: const Text('My Courses',
-                  style: TextStyle(fontWeight: FontWeight.bold)),
-              onTap: () {
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => courses()));
               },
             ),
             const Divider(

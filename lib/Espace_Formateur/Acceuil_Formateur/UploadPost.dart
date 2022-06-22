@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
-class UploadPostApprenant with ChangeNotifier {
+class UploadPostFormateur with ChangeNotifier {
   User? userData = FirebaseAuth.instance.currentUser!;
 
   TextEditingController captionController = TextEditingController();

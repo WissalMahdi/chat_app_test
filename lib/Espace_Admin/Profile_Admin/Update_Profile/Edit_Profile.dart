@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names
 
-import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileApprenant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Colors_Config/palette.dart';
+import '../ProfilAdmin.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -143,7 +143,7 @@ class _ManageProfileState extends State<EditProfile> {
                                     Navigator.of(context).pushReplacement(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                ProfileApprenant()));
+                                                ProfileAdmin()));
                                   },
                                   child: Text('OK'))
                             ],

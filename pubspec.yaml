@@ -54,6 +54,9 @@ dependencies:
   table_calendar: 
   file_picker: ^4.6.1
   open_file: ^3.2.1
+  gallery_saver: 
+  flutter_pdfview: ^1.2.2
+  http: ^0.13.4
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -81,6 +84,7 @@ flutter:
     - images/background.png
     - images/test.jpg
     - animations/loading.json
+    - assets/emploi.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
