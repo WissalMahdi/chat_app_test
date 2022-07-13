@@ -3,18 +3,18 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
-import '../../UI_Espace_Admin.dart';
-import 'Grades_Files_Page.dart';
+import '../../UI_Espace_Formateur.dart';
+import 'Courses_Files_Page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class Grades extends StatelessWidget {
+class Courses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Grades',
+      title: 'Courses',
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 80, 77, 80),
           title: Text(
-            "Grades",
+            "Courses",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           leading: IconButton(
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
               iconSize: 25,
               onPressed: () {
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => EspaceAdmin()));
+                    MaterialPageRoute(builder: (context) => EspaceFormateur()));
               }),
         ),
         body: ListView(
@@ -66,40 +66,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("1ére Année MID",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 139, 122, 100),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("2éme Année MID",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 117, 113, 107),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("3éme Année MID",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
@@ -133,40 +99,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Color.fromARGB(255, 75, 64, 74),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
-                  title: Text("1ére Année EM",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 139, 122, 100),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("2éme Année EM",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 117, 113, 107),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
                   title: Text("3éme Année EM",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
@@ -198,43 +130,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 75, 64, 74),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                    title: Text("1ére Année CEP",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white)),
-                    onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => FilesPage(
-                                files: const [],
-                                onOpenedFile: (PlatformFile value) {},
-                              )));
-                    })),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
                 color: Color.fromARGB(255, 139, 122, 100),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("2éme Année CEP",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 117, 113, 107),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("3éme Année CEP",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {

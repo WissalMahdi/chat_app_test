@@ -7,7 +7,6 @@ import '../../Services/Auth.dart';
 import '../../SplashScreen/splash_screen.dart';
 import '../Profile_Admin/ProfilAdmin.dart';
 import 'Draw_Menu/Events_And_Trainings/Events_Calendar.dart';
-import 'Draw_Menu/Grades/Grades.dart';
 import 'Draw_Menu/Results/Results.dart';
 import 'Draw_Menu/Schedule_Time/Time_Schedule.dart';
 import 'Home_Helpers.dart';
@@ -96,15 +95,6 @@ class NavigationDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
                     builder: (context) => CustomTableCalendar()));
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.grading),
-              title: const Text('Grades 2022/2023',
-                  style: TextStyle(fontWeight: FontWeight.bold)),
-              onTap: () {
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => Grades()));
               },
             ),
             ListTile(

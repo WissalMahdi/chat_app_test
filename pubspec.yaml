@@ -56,7 +56,13 @@ dependencies:
   open_file: ^3.2.1
   gallery_saver: 
   flutter_pdfview: ^1.2.2
+  like_button: ^2.0.4
   http: ^0.13.4
+  comment_box: ^0.0.17
+  get: ^4.6.5
+  radial_menu: ^0.0.1
+  search_page: ^2.0.0+1
+  searchable_listview: ^1.7.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

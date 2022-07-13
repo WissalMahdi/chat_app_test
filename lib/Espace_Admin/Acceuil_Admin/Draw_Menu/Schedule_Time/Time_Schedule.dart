@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../../UI_Espace_Admin.dart';
 import 'Schedule_Files_Page.dart';
 
-void main() => runApp(MyApp());
+//void main() => runApp(MyApp());
 
 class TimeSchedule extends StatelessWidget {
   // This widget is the root of your application.

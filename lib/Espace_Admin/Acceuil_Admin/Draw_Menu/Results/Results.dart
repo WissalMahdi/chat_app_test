@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import '../../UI_Espace_Admin.dart';
 import 'Results_Files_Page.dart';
 
-void main() {
+/*void main() {
   runApp(MyApp());
-}
+}*/
 
 class Results extends StatelessWidget {
   const Results({Key? key}) : super(key: key);

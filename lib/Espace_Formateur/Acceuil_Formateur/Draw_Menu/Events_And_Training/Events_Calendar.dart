@@ -1,6 +1,6 @@
 // ignore_for_file: deprecated_member_use, unnecessary_new, prefer_const_constructors, sized_box_for_whitespace
 
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/UI_Espace_Apprenant.dart';
+import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/UI_Espace_Formateur.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -142,13 +142,9 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => EspaceApprenant()));
+                  MaterialPageRoute(builder: (context) => EspaceFormateur()));
             }),
       ),
-      /* floatingActionButton: FloatingActionButton.extended(
-        onPressed: (() => _showAddEventDialog()),
-        label: const Text('Add Event'),
-      ),*/
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -249,70 +245,77 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
                 },
               ),
             ),
-            ..._listOfDayEvents(selectedCalendarDate!).map(
-              (myEvents) => ListTile(
-                leading: const Icon(
-                  Icons.done,
-                  color: AppColors.eggPlant,
-                ),
-                title: Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Text('Event Title:   ${myEvents.eventTitle}'),
-                ),
-                subtitle: Text('Description:   ${myEvents.eventDescp}'),
+            Padding(
+              padding: const EdgeInsets.only(right: 250, bottom: 12),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 130, bottom: 16),
+              child: Text(
+                'Date Event : 20/07/2022 ',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 131, 73, 126),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15),
               ),
             ),
-            SizedBox(
-              height: 80,
-            ),
-            Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: <Widget>[
-                  Container(
-                    width: 130,
-                    height: 50,
-                    child: RaisedButton(
-                      color: Color(0xFF6d435a),
-                      child: Text(
-                        "Add Event",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Color.fromARGB(255, 221, 212, 217)),
-                      ),
-                      onPressed: () {
-                        _showAddEventDialog();
-                      },
-                      shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(30.0)),
-                    ),
-                  ),
-                  SizedBox(width: 80),
-                  Container(
-                    width: 130,
-                    height: 50,
-                    child: RaisedButton(
-                      color: Color(0xFF6d435a),
-                      child: Text(
-                        "Add Meeting",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Color.fromARGB(255, 221, 212, 217)),
-                      ),
-                      onPressed: () {
-                        //   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        //     builder: (context) => FormulaireMeeting()));
-                      },
-                      shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(30.0)),
-                    ),
-                  ),
-                ],
+            Padding(
+              padding: const EdgeInsets.only(right: 72, bottom: 16),
+              child: Text(
+                'Event Title : Formation Electricité',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15),
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 62, bottom: 8.0),
+              child: Text(
+                'Description : Electricité et Batiment',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15),
+              ),
+            ),
+            Divider(
+              endIndent: 30,
+              indent: 30,
+              color: Color.fromARGB(255, 167, 166, 166),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 250, bottom: 12),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 130, bottom: 16),
+              child: Text(
+                'Date Event : 30/06/2022 ',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 131, 73, 126),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 55, bottom: 16),
+              child: Text(
+                'Event Title : Formation Mécatronique',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 40, bottom: 8.0),
+              child: Text(
+                'Description : Electronique et Mécanique',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15),
+              ),
+            ),
           ],
         ),
       ),

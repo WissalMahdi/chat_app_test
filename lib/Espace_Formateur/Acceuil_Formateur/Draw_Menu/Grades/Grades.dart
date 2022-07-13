@@ -76,40 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             )));
                   },
                 )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 139, 122, 100),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("2éme Année MID",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 117, 113, 107),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("3éme Année MID",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
             const Divider(
               color: Color.fromARGB(255, 233, 229, 229),
               thickness: 1.5,
@@ -131,40 +97,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 color: Color.fromARGB(255, 75, 64, 74),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("1ére Année EM",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 139, 122, 100),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("2éme Année EM",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 117, 113, 107),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("3éme Année EM",
@@ -198,43 +130,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 75, 64, 74),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                    title: Text("1ére Année CEP",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white)),
-                    onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => FilesPage(
-                                files: const [],
-                                onOpenedFile: (PlatformFile value) {},
-                              )));
-                    })),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
                 color: Color.fromARGB(255, 139, 122, 100),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("2éme Année CEP",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
-                              files: const [],
-                              onOpenedFile: (PlatformFile value) {},
-                            )));
-                  },
-                )),
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 117, 113, 107),
-                margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text("3éme Année CEP",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {

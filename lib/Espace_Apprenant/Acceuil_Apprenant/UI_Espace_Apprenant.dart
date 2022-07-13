@@ -7,7 +7,6 @@ import 'package:chat_app_test/Home/Search/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../Espace_Admin/Acceuil_Admin/HomePageHelpers.dart';
 import 'HomePageHelpers.dart';
 
 void main() {

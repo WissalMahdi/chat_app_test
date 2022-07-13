@@ -71,7 +71,7 @@ class _FilesPageState extends State<ScheduleFilePage> {
       backgroundColor: const Color.fromARGB(255, 206, 204, 204),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 80, 77, 80),
-        title: const Text("Add Results",
+        title: const Text("Add Time Schedules",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         leading: IconButton(
             icon: const Icon(Icons.arrow_back),
