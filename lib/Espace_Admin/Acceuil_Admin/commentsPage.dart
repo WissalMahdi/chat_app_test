@@ -15,24 +15,28 @@ class _TestMeState extends State<TestMe> {
   final TextEditingController commentController = TextEditingController();
   List filedata = [
     {
-      'name': 'Adeleye Ayodeji',
-      'pic': 'https://picsum.photos/300/30',
-      'message': 'I love to code'
+      'name': 'Karim Setti',
+      'pic':
+          'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80',
+      'message': 'Daccord monsieur'
     },
     {
-      'name': 'Biggi Man',
-      'pic': 'https://picsum.photos/300/30',
-      'message': 'Very cool'
+      'name': 'Mahdi Harbi',
+      'pic':
+          'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      'message': 'Bien reçu monsieur'
     },
     {
-      'name': 'Biggi Man',
-      'pic': 'https://picsum.photos/300/30',
-      'message': 'Very cool'
+      'name': 'Ameni Gharbi',
+      'pic':
+          'https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80',
+      'message': 'Ok monsieur, inshallah'
     },
     {
-      'name': 'Biggi Man',
-      'pic': 'https://picsum.photos/300/30',
-      'message': 'Very cool'
+      'name': 'Soufien Cherni',
+      'pic':
+          'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+      'message': 'Dacc monsieur'
     },
   ];
 
@@ -90,7 +94,7 @@ class _TestMeState extends State<TestMe> {
       body: Container(
         child: CommentBox(
           userImage:
-              "https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400",
+              "https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg",
           child: commentChild(filedata),
           labelText: 'Write a comment...',
           withBorder: false,
@@ -102,7 +106,7 @@ class _TestMeState extends State<TestMe> {
                 var value = {
                   'name': 'CFM Nabeul',
                   'pic':
-                      'https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400',
+                      'https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg',
                   'message': commentController.text
                 };
                 filedata.insert(0, value);

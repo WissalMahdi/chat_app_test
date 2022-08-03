@@ -1,19 +1,16 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore, sized_box_for_whitespace, camel_case_types
 
-import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/Home_Admin.dart';
+import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/commentsPage.dart';
+import 'package:chat_app_test/Espace_Admin/Profile_Admin/ProfilAdmin.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
-import 'package:radial_menu/radial_menu.dart';
-
-void main() => runApp(GetMaterialApp());
-
-var myMenuItems = <String>['Home', 'Profile', 'Setting', 'Privacy', 'Contact'];
 
 //the feed box will have for parameters :
 // the user name , the user avatar, the pub date, the content text and content img
 Widget feedBox(String avatarUrl, String userName, String date,
     String contentText, String contentImg) {
+  bool click = true;
   return Container(
       margin: const EdgeInsets.only(bottom: 20.0),
       width: double.infinity,
@@ -47,8 +44,7 @@ Widget feedBox(String avatarUrl, String userName, String date,
                             children: [
                               TextButton(
                                 onPressed: (() {
-                                  //  Get.to(HomeAdmin());
-                                  //   Get.testMode = true;
+                                  Get.to(ProfileAdmin());
                                 }),
                                 child: Text(
                                   userName,
@@ -63,11 +59,13 @@ Widget feedBox(String avatarUrl, String userName, String date,
                                 width: 25,
                               ),
                               IconButton(
-                                  onPressed: (() {}),
+                                  onPressed: (() {
+                                    Get.defaultDialog(title: "Alert");
+                                  }),
                                   icon: Icon(
                                     Icons.person_add,
                                     size: 30,
-                                  ))
+                                  )),
                             ],
                           ),
 
@@ -153,7 +151,9 @@ Widget feedBox(String avatarUrl, String userName, String date,
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    //Get.to(TestMe());
+                                    Get.to(TestMe());
+                                    //     navigatorKey.currentState
+                                    //       ?.pushReplacementNamed("TestMe");
                                   },
                                   child: Icon(
                                     Icons.comment,

@@ -8,12 +8,14 @@ import 'package:chat_app_test/SplashScreen/splash_screen.dart';
 import 'package:chat_app_test/services/fireBaseOperations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 
 import 'Espace_Admin/Acceuil_Admin/HomePageHelpers.dart';
 import 'Espace_Admin/Acceuil_Admin/Home_Helpers.dart';
 import 'Espace_Admin/Acceuil_Admin/UploadPost.dart';
 import 'Espace_Admin/Profile_Admin/ProfileHelpers.dart';
+import 'Espace_Admin/Profile_Admin/ProfileHelpers_AfterDelete.dart';
 import 'Espace_Apprenant/Acceuil_Apprenant/HomePageHelpers.dart';
 import 'Espace_Apprenant/Acceuil_Apprenant/Home_Helpers.dart';
 
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         // ignore: prefer_const_constructors
-        child: MaterialApp(
+        child: GetMaterialApp(
           home: const SplashScreen(),
           debugShowCheckedModeBanner: false,
         ),
@@ -49,6 +51,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => HomeHelpersFormateur()),
           ChangeNotifierProvider(create: (_) => ProfileHelpersFormateur()),
           ChangeNotifierProvider(create: (_) => UploadPostFormateur()),
+          ChangeNotifierProvider(create: (_) => ProfileHelpersAfterDelete()),
         ]);
   }
 }    

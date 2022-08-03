@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       // Hide the debug banner
       debugShowCheckedModeBanner: false,
-      title: 'Espace Apprenant',
+      title: 'Espace Admin',
       home: EspaceAdmin(),
     );
   }

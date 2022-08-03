@@ -1,6 +1,9 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore, avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_new, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, unused_local_variable, avoid_print
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_new, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, unused_local_variable, avoid_print, non_constant_identifier_names
 
 import 'dart:io';
+
+import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/commentsPage.dart';
+import 'package:chat_app_test/Espace_Admin/Profile_Admin/likes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +11,8 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
+
+import 'ProfileAdmin_After_delete.dart';
 
 void main() async {
   runApp(
@@ -27,50 +32,49 @@ class PhotoItem {
 class RouteOne extends StatelessWidget {
   final List<PhotoItem> _items = [
     PhotoItem(
+        "https://clg-fesch.leia.corsica/wp-content/uploads/sites/47/2022/03/Teacher-Appreciation-Week-Instagram-Post.png",
+        "Votre rentrée scolaire pour cette année sera le 01/10/2022, préparez-vous bien chers élèves, nous vous souhaitons le meilleur pour cette année :)"),
+    PhotoItem(
         "https://images.unsplash.com/photo-1553873002-785d775854c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "Stephan Seeber"),
+        "Il ya un multimétre disparu,est ce que quelqu'un de vous trouve-il?"),
     PhotoItem(
-        "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "Liam Gant"),
+        "https://www.gobelins.fr/sites/default/files/styles/news_main/public/thumbnails/image/cbaillou-adobestock_88932545_light.jpg?itok=WUPlgO9C",
+        "une formation sera programmé sur 3 jours pour la semaine prochaine, vous pouvez le trouver dans les formations disponibless  "),
     PhotoItem(
-        "https://images.unsplash.com/photo-1503791774117-08c379dd7f7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1154&q=80",
-        "Stephan Seeber"),
-    PhotoItem(
-        "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
-        "Pixabay"),
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2QESytfDu0khjjBntDGeehSnBfbeDDrVPQ7T4IKtmO4l66EVs43XRMSl6II6ZDZfPvTQ&usqp=CAU",
+        "il y a une carte d'identité perdue, vous pouvez la trouver dans l'administration"),
     PhotoItem(
         "https://images.unsplash.com/photo-1454988501794-2992f706932e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
-        "Scott Webb"),
+        "des nouveaux matériaux à venir demain pour vos TP, Préparez..."),
     PhotoItem(
         "https://images.unsplash.com/photo-1606676539940-12768ce0e762?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        "Krivec Ales"),
+        "Si quelqu'un d'entre vous avez une perceuse, il vaut mieux qu'il l'apportait pour ses TP car le nombre de perceuses qu'on a possèdé n'est pas suffisant"),
     PhotoItem(
         "https://images.unsplash.com/photo-1620332114059-c88fe9862928?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1279&q=80",
-        "Pixabay"),
+        ""),
     PhotoItem(
-        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        "Melanie Wupper"),
+        "https://siena.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_in_line/2021/05/13/node_785354/2610002/public/2021/05/13/B9727017888Z.1_20210513111736_000%2BGQVI47ASB.1-0.png?itok=cBteAaKc1620897463",
+        "Un calendrier scolaire est disponible pour vous dès maintenant"),
     PhotoItem(
-        "https://images.unsplash.com/photo-1563456019560-2b37aa7ad890?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
-        "Jaymantri"),
+        "https://www.lacroixblanche.org/wp-content/uploads/2020/07/R%C3%A9sultats.jpg",
+        "Vos résultats sont disponibles maintenant "),
     PhotoItem(
-        "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "Riciardus"),
+        "https://cck.rnu.tn/wp-content/uploads/2022/07/AO_SI-MESRS-thegem-blog-masonry.jpg",
+        "Appel d'offres nationnal Aout 2022"),
     PhotoItem(
-        "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
-        "Pixabay"),
+        "https://cdn-az.allevents.in/events5/banners/d8b89f57061fe1c51367dd16865f777be49c9d40dc8ad6d129f6a0ec19112d5c-rimg-w508-h720-gmir.jpg?v=1583520731",
+        " حصة تثقيفية حول أبجديات الإسعافات لمجموعة من المتكونين بالمركز القطاعي للتكوين في الصيانة نابل من منظمة الهلال الأحمر الهيئة الجهوية بنابل يوم السبت 20 نوفمبر بقاعة التنشيط بالمبيت "),
     PhotoItem(
-        "https://images.unsplash.com/photo-1527427337751-fdca2f128ce5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "Eberhard"),
+        "http://www.mon-diplome.fr/Diplome/700-332946-Diplome+de+Maintenance+Industrielle.jpg",
+        "le dépôt des diplômes sera dans le mois de septembre 2022"),
     PhotoItem(
-        "https://images.unsplash.com/photo-1509390144018-eeaf65052242?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-        "Classe EM1, on a une visite à STEG'N demain à 8h30 préparer vous bien"),
+        "https://images.tokopedia.net/img/cache/500-square/product-1/2020/7/6/batch-upload/batch-upload_ee6ab488-dbd7-4110-95fd-898c7cf6abdf.jpg",
+        "تعتزم إدارة المركز القطاعي للتكوين في الصيانة بنابل انشاء نادي شطرنج للمتكونين ينطلق نشاطه يوم الثلاثاء 19/10/2022"),
     PhotoItem(
-        "https://images.unsplash.com/photo-1620214819239-704eb97df587?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
-        "Classe EM21, Nouvelle matiére d'energitique pour l'année prochaine"),
-    PhotoItem(
-        "https://images.unsplash.com/photo-1602267774924-38124c047174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "Tobi"),
+        "https://media.elcinema.com/uploads/_315x420_daf42061982d6eff659c2dc1a12a259712c02ef63cf0290b9437283ba736f768.jpg",
+        "بيك نعيش فيلم روائي تونسي للمخرج مهدي البرصاوي. تدور أحداث الفيلم في مدينة تطاوين بتونس سبتمبر 2011، ويحكي قصة زوجين يحاولان الحصول على متبرع بالكبد لابنهما، في ظل الأوضاع الاجتماعية والسياسية والاقتصادية في الفترة مابعد ثورة 2011."),
+    PhotoItem("https://wallpaperaccess.com/full/1668956.png",
+        "Bonsoir, est ce que quelqu'un d'entre vous à trouver une carte d'identité s'il vous plaît?"),
   ];
 
   @override
@@ -112,7 +116,6 @@ class RouteOne extends StatelessWidget {
 class RouteTwo extends StatelessWidget {
   final String image;
   final String name;
-
   RouteTwo({Key? key, required this.image, required this.name})
       : super(key: key);
 
@@ -120,7 +123,70 @@ class RouteTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Screen two ✌️'),
+        backgroundColor: Color.fromARGB(255, 71, 5, 57),
+        title: Text('Post'),
+        actions: <Widget>[
+          PopupMenuButton<String>(
+            onSelected: handleClick,
+            itemBuilder: (BuildContext context) {
+              return {'Delete'}.map((String choice) {
+                return PopupMenuItem<String>(
+                    value: choice,
+                    child: GestureDetector(
+                        child: Text(choice),
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                backgroundColor: Color.fromARGB(255, 20, 2, 18),
+                                title: Text(
+                                    'Are you sure about deleting this post?',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold)),
+                                actions: [
+                                  MaterialButton(
+                                    child: Text(
+                                      'No',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18.0,
+                                          decoration: TextDecoration.underline,
+                                          decorationColor: Colors.white),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                  MaterialButton(
+                                    color: Colors.red,
+                                    child: Text(
+                                      'Yes',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProfileAdminAfterDelete()));
+                                    },
+                                  )
+                                ],
+                              );
+                            },
+                          );
+                        }));
+              }).toList();
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -133,18 +199,95 @@ class RouteTwo extends StatelessWidget {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 80.0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        GestureDetector(
+                          child: Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => likes()));
+                          },
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "5",
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 100.0,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) => TestMe()));
+                            },
+                            child: Icon(
+                              Icons.comment,
+                              color: Color.fromARGB(255, 17, 17, 17),
+                              size: 22.0,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "4",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ]),
+                  )
+                ],
+              ),
+            ),
+          ),
           Container(
             margin: const EdgeInsets.all(20.0),
             child: Center(
               child: Text(
                 name,
-                style: const TextStyle(fontSize: 40),
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
               ),
             ),
           ),
         ],
       ),
     );
+  }
+
+  void handleClick(String value) {
+    switch (value) {
+      case 'Delete':
+        break;
+      case 'Update':
+        break;
+    }
   }
 }
 
@@ -198,7 +341,7 @@ class ProfileHelpers with ChangeNotifier {
                           ))
                         : ClipOval(
                             child: Image.network(
-                            'https://i.stack.imgur.com/l60Hf.png',
+                            "https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg",
                             width: 120,
                             height: 120,
                             fit: BoxFit.cover,
@@ -279,7 +422,7 @@ class ProfileHelpers with ChangeNotifier {
                           // ignore: prefer_const_literals_to_create_immutables
                           children: [
                             Text(
-                              '15',
+                              '20',
                               // ignore: prefer_const_constructors
                               style: TextStyle(
                                   color: Colors.white,
@@ -343,7 +486,7 @@ class ProfileHelpers with ChangeNotifier {
                       // ignore: prefer_const_literals_to_create_immutables
                       children: [
                         Text(
-                          '20',
+                          '15',
                           // ignore: prefer_const_constructors
                           style: TextStyle(
                               color: Colors.white,

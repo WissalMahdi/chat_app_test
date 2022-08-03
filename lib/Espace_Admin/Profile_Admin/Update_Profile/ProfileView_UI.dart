@@ -82,7 +82,7 @@ class _ProfileViewState extends State<ProfileView> {
                           ))
                         : ClipOval(
                             child: Image.network(
-                            'https://i.stack.imgur.com/l60Hf.png',
+                            'https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg',
                             width: 150,
                             height: 150,
                             fit: BoxFit.cover,
