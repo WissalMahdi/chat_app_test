@@ -4,17 +4,18 @@ import 'package:intl/intl.dart';
 import 'Events_Calendar.dart';
 
 
-const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+const Color darkBlue = Color.fromARGB(255, 219, 223, 226);
 
 void main() {
   runApp(FormulaireMeeting());
 }
 
+// ignore: use_key_in_widget_constructors
 class FormulaireMeeting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: darkBlue,
       ),
       debugShowCheckedModeBanner: false,
@@ -22,6 +23,7 @@ class FormulaireMeeting extends StatelessWidget {
   }
 }
 
+// ignore: use_key_in_widget_constructors
 class FlutterDatePickerExample extends StatelessWidget {
   final ValueNotifier<DateTime?> dateSub = ValueNotifier(null);
   final ValueNotifier<DateTime?> longDateSub = ValueNotifier(null);
@@ -33,6 +35,7 @@ class FlutterDatePickerExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 48, 117, 182),
         title: const Text('Meetings Calendar',style: TextStyle(
               fontWeight: FontWeight.bold,
             )),
@@ -53,7 +56,7 @@ class FlutterDatePickerExample extends StatelessWidget {
             const Text(
               ' Create Meeting',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 24.0),
+              style: TextStyle(fontSize: 22.0, color: Color.fromARGB(255, 48, 117, 182), fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 20,
@@ -69,7 +72,7 @@ class FlutterDatePickerExample extends StatelessWidget {
             const Text(
               ' Date From',
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 18.0),
+              style: TextStyle(fontSize: 18.0, color: Color.fromARGB(255, 48, 117, 182), fontWeight: FontWeight.bold),
             ),
             ValueListenableBuilder<DateTime?>(
                 valueListenable: dateSub,
@@ -88,8 +91,8 @@ class FlutterDatePickerExample extends StatelessWidget {
                               return Theme(
                                 data: Theme.of(context).copyWith(
                                     colorScheme: const ColorScheme.light(
-                                      primary: Colors.blueGrey,
-                                      onSurface: Color.fromARGB(255, 255, 255, 255),
+                                      primary: Color.fromARGB(255, 27, 92, 124),
+                                      onSurface: Color.fromARGB(255, 148, 148, 148),
                                     )
                                 ),
                                 child: child!,
@@ -106,7 +109,7 @@ class FlutterDatePickerExample extends StatelessWidget {
             const Text(
               ' Time From',
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 18.0),
+              style: TextStyle(fontSize: 18.0, color: Color.fromARGB(255, 48, 117, 182), fontWeight: FontWeight.bold),
             ),
             ValueListenableBuilder<TimeOfDay?>(
                 valueListenable: timeSubShort,
@@ -135,7 +138,7 @@ class FlutterDatePickerExample extends StatelessWidget {
             const Text(
               ' Date To',
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 18.0),
+              style: TextStyle(fontSize: 18.0, color: Color.fromARGB(255, 48, 117, 182), fontWeight: FontWeight.bold),
             ),
             ValueListenableBuilder<DateTime?>(
                 valueListenable: longDateSub,
@@ -164,7 +167,7 @@ class FlutterDatePickerExample extends StatelessWidget {
             const Text(
               ' Time To',
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 18.0),
+              style: TextStyle(fontSize: 18.0, color: Color.fromARGB(255, 48, 117, 182), fontWeight: FontWeight.bold),
             ),
             ValueListenableBuilder<TimeOfDay?>(
                 valueListenable: timeSub,
@@ -193,14 +196,16 @@ class FlutterDatePickerExample extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                 content: Text('Meeting Created'),
                 duration: Duration(seconds: 5),));
-            }, child: const Text('SUBMIT',  style: TextStyle(
+            }, child: const Text('SUBMIT', 
+             style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 71, 70, 68),
-              fontSize: 16,
+              color: Color.fromARGB(255, 255, 255, 255),
+              fontSize: 17,
             )),
-           style: ElevatedButton.styleFrom(
+           style: ElevatedButton.styleFrom(shape:   RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
                 // ignore: prefer_const_constructors
-                primary: Color.fromARGB(255, 241, 241, 240),)),
+                primary: Color.fromARGB(255, 57, 127, 194),),),
           ],
         ),
         ),
@@ -229,12 +234,12 @@ class FlutterDatePickerExample extends StatelessWidget {
     return ListTile(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
-        side: const BorderSide(color: AppColors.eggPlant, width: 1.5),
+        side: const BorderSide(color: Color.fromARGB(255, 32, 32, 32), width: 1.5),
       ),
       title: Text(data),
       trailing: const Icon(
         Icons.calendar_today,
-        color: AppColors.eggPlant,
+        color: Color.fromARGB(255, 48, 117, 182),
       ),
     );
   }
@@ -247,13 +252,13 @@ class FlutterDatePickerExample extends StatelessWidget {
       decoration: InputDecoration(
         labelText: hint ?? '',
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: AppColors.eggPlant, width: 1.5),
+          borderSide: const BorderSide(color: Color.fromARGB(255, 32, 32, 32), width: 1.5),
           borderRadius: BorderRadius.circular(
             10.0,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: AppColors.eggPlant, width: 1.5),
+          borderSide: const BorderSide(color: Color.fromARGB(255, 32, 32, 32), width: 1.5),
           borderRadius: BorderRadius.circular(
             10.0,
           ),

@@ -28,14 +28,14 @@ class _FilesPageState extends State<ScheduleFilePage> {
 
   List<List<Color>> gradientColors = [];
   List<Color> gradientFirst = [
-    Color.fromARGB(255, 63, 11, 63),
-    Color.fromARGB(255, 102, 67, 134),
-    Color.fromARGB(255, 85, 25, 90)
+    Color.fromARGB(255, 8, 11, 230),
+    Color.fromARGB(255, 74, 50, 209),
+    Color.fromARGB(255, 155, 172, 202)
   ];
   List<Color> gradientSecond = [
-    Color.fromARGB(255, 141, 40, 119),
-    Color.fromARGB(255, 194, 151, 181),
-    Color.fromARGB(255, 160, 43, 135)
+    Color.fromARGB(255, 40, 101, 141),
+    Color.fromARGB(255, 19, 50, 117),
+    Color.fromARGB(255, 7, 32, 177)
   ];
   List<Color> gradientThird = [
     Color(0xFFffffff),
@@ -48,9 +48,9 @@ class _FilesPageState extends State<ScheduleFilePage> {
     Color.fromARGB(255, 12, 171, 230)
   ];
   List<Color> gradientFifth = [
-    Color.fromARGB(255, 105, 64, 10),
-    Color.fromARGB(255, 216, 167, 178),
-    Color.fromARGB(255, 175, 101, 79)
+    Color.fromARGB(255, 12, 10, 105),
+    Color.fromARGB(255, 247, 245, 245),
+    Color.fromARGB(255, 33, 3, 209)
   ];
 
   @override
@@ -68,9 +68,8 @@ class _FilesPageState extends State<ScheduleFilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 206, 204, 204),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 80, 77, 80),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
         title: const Text("Add Time Schedules",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         leading: IconButton(
@@ -107,7 +106,7 @@ class _FilesPageState extends State<ScheduleFilePage> {
           final newFile = await saveFilePermanently(file);
         },
         child: const Icon(Icons.add),
-        backgroundColor: Color.fromARGB(255, 65, 63, 63),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
       ),
     );
   }

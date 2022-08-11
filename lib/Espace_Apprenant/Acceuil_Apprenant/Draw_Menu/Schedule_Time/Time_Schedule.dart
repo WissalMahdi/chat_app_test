@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:gallery_saver/gallery_saver.dart';
 
 import '../../UI_Espace_Apprenant.dart';
 
@@ -16,10 +15,10 @@ class _fileState extends State<TimeSchedule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 167, 161, 161),
+      backgroundColor: Color.fromARGB(255, 218, 226, 236),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 61, 17, 55),
-        title: const Text('Emploi du temps TMMSI'),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
+        title: const Text('Time Schedule EI1'),
         leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
@@ -44,7 +43,7 @@ class _fileState extends State<TimeSchedule> {
               height: 30,
             ),
             Text(
-              'Emploi du temps 2éme semaine',
+              'Half semester time Schedule',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             SizedBox(

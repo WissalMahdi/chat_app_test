@@ -100,7 +100,10 @@ class _ManageProfileState extends State<EditProfile> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 185, 115, 158)),
+                  minimumSize: const Size(200, 40),
+                  shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                  primary: Color.fromARGB(255, 61, 108, 236)),
               onPressed: () {
                 // if (emailController.text.isNotEmpty) {
                 if (user!.displayName == null) {
@@ -119,14 +122,23 @@ class _ManageProfileState extends State<EditProfile> {
                   showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                            title: Text('Failed'),
+                            title: Text(
+                              'Failed',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
                             content: Text('No data to update'),
                             actions: [
                               TextButton(
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
-                                  child: Text('OK'))
+                                  child: Text(
+                                    'OK',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ))
                             ],
                           ));
                 } else if (PasswordController.text.isNotEmpty ||
@@ -145,14 +157,22 @@ class _ManageProfileState extends State<EditProfile> {
                                             builder: (context) =>
                                                 ProfileAdmin()));
                                   },
-                                  child: Text('OK'))
+                                  child: Text(
+                                    'OK',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ))
                             ],
                           ));
                 }
 
                 _clearAll();
               },
-              child: Text('Edit'),
+              child: Text(
+                'Edit',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
           ],
         ),

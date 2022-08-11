@@ -18,6 +18,7 @@ import 'Espace_Admin/Profile_Admin/ProfileHelpers.dart';
 import 'Espace_Admin/Profile_Admin/ProfileHelpers_AfterDelete.dart';
 import 'Espace_Apprenant/Acceuil_Apprenant/HomePageHelpers.dart';
 import 'Espace_Apprenant/Acceuil_Apprenant/Home_Helpers.dart';
+import 'Espace_Apprenant/Profile_Apprenant/ProfileHelpers_AfterDelete.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => ProfileHelpersFormateur()),
           ChangeNotifierProvider(create: (_) => UploadPostFormateur()),
           ChangeNotifierProvider(create: (_) => ProfileHelpersAfterDelete()),
+          ChangeNotifierProvider(create: (_) => ProfileHelpersAfterDeleteApp()),
         ]);
   }
 }    

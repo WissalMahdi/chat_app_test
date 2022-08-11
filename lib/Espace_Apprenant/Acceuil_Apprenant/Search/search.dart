@@ -1,28 +1,25 @@
 // ignore_for_file: prefer_const_constructors, avoid_types_as_parameter_names
 
+import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/Search/Profiles.dart';
 import 'package:chat_app_test/Espace_Admin/Profile_Admin/ProfilAdmin.dart';
-import 'package:chat_app_test/Home/Search/profiles.dart';
 import 'package:flutter/material.dart';
-import 'package:search_page/search_page.dart';
 
-import 'profiles.dart';
-
-class Search extends StatefulWidget {
-  const Search({Key? key}) : super(key: key);
+class SearchApprenant extends StatefulWidget {
+  const SearchApprenant({Key? key}) : super(key: key);
 
   @override
-  State<Search> createState() => _SearchState();
+  State<SearchApprenant> createState() => _SearchState();
 }
 
-class _SearchState extends State<Search> {
+class _SearchState extends State<SearchApprenant> {
   final controller = TextEditingController();
   List<profiles> profile = allProfiles;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 29, 27, 29),
+      backgroundColor: Color.fromARGB(255, 243, 241, 241),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 29, 27, 29),
+        backgroundColor: Color.fromARGB(255, 243, 241, 241),
         elevation: 0.0,
       ),
       body: Padding(
@@ -34,7 +31,7 @@ class _SearchState extends State<Search> {
             Text(
               "Search for someone..",
               style: TextStyle(
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 36, 36, 37),
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
@@ -43,9 +40,12 @@ class _SearchState extends State<Search> {
             ),
             TextField(
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
                   filled: true,
-                  fillColor: Color.fromARGB(255, 53, 51, 51),
+                  fillColor: Color.fromARGB(255, 213, 213, 218),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide.none)),
@@ -68,7 +68,9 @@ class _SearchState extends State<Search> {
                           ),
                           title: Text(
                             profiles.name,
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 29, 28, 28),
+                                fontWeight: FontWeight.bold),
                           ),
                           onTap: () => Navigator.of(context).pushReplacement(
                               MaterialPageRoute(

@@ -4,7 +4,7 @@ import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/UI_Espace_Appre
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+//const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
 class CustomTableCalendar extends StatefulWidget {
   const CustomTableCalendar({Key? key}) : super(key: key);
@@ -42,70 +42,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
     return mySelectedEvents[dateTime] ?? [];
   }
 
-  _showAddEventDialog() async {
-    await showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              title: const Text('New Event'),
-              content: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  buildTextField(
-                      controller: titleController, hint: 'Enter Title'),
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  buildTextField(
-                      controller: descpController, hint: 'Enter Description'),
-                ],
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('Cancel'),
-                ),
-                TextButton(
-                  onPressed: () {
-                    if (titleController.text.isEmpty &&
-                        descpController.text.isEmpty) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Please enter title & description'),
-                          duration: Duration(seconds: 3),
-                        ),
-                      );
-                      //Navigator.pop(context);
-                      return;
-                    } else {
-                      setState(() {
-                        if (mySelectedEvents[selectedCalendarDate] != null) {
-                          mySelectedEvents[selectedCalendarDate]?.add(MyEvents(
-                              eventTitle: titleController.text,
-                              eventDescp: descpController.text));
-                        } else {
-                          mySelectedEvents[selectedCalendarDate!] = [
-                            MyEvents(
-                                eventTitle: titleController.text,
-                                eventDescp: descpController.text)
-                          ];
-                        }
-                      });
-
-                      titleController.clear();
-                      descpController.clear();
-
-                      Navigator.pop(context);
-                      return;
-                    }
-                  },
-                  child: const Text('Add'),
-                ),
-              ],
-            ));
-  }
-
-  Widget buildTextField(
+  /*ssWidget buildTextField(
       {String? hint, required TextEditingController controller}) {
     return TextField(
       controller: controller,
@@ -113,7 +50,8 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
       decoration: InputDecoration(
         labelText: hint ?? '',
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: AppColors.eggPlant, width: 1.5),
+          borderSide: const BorderSide(
+              color: Color.fromARGB(255, 201, 2, 141), width: 1.5),
           borderRadius: BorderRadius.circular(
             10.0,
           ),
@@ -126,14 +64,14 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
         ),
       ),
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 18, 32, 47),
+      backgroundColor: Color.fromARGB(255, 219, 223, 226),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 71, 70, 68),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
         title: const Text('Events & Training Calendar',
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -153,14 +91,15 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
         child: Column(
           children: [
             Card(
-              color: Color.fromARGB(255, 71, 70, 68),
+              color: Color.fromARGB(255, 195, 195, 207),
               margin: const EdgeInsets.all(8.0),
               elevation: 5.0,
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
                   Radius.circular(10),
                 ),
-                side: BorderSide(color: AppColors.blackCoffee, width: 2.0),
+                side: BorderSide(
+                    color: Color.fromARGB(255, 34, 34, 36), width: 2.0),
               ),
               child: TableCalendar(
                 focusedDay: _focusedCalendarDate,
@@ -184,15 +123,16 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
                 eventLoader: _listOfDayEvents,
                 // Calendar Header Styling
                 headerStyle: const HeaderStyle(
-                  titleTextStyle:
-                      TextStyle(color: AppColors.babyPowder, fontSize: 20.0),
+                  titleTextStyle: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontSize: 20.0),
                   decoration: BoxDecoration(
-                      color: AppColors.eggPlant,
+                      color: Color.fromARGB(151, 74, 96, 138),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10))),
-                  formatButtonTextStyle:
-                      TextStyle(color: AppColors.ultraRed, fontSize: 16.0),
+                  formatButtonTextStyle: TextStyle(
+                      color: Color.fromARGB(255, 102, 36, 255), fontSize: 16.0),
                   formatButtonDecoration: BoxDecoration(
                     color: AppColors.babyPowder,
                     borderRadius: BorderRadius.all(
@@ -213,24 +153,27 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
                 // Calendar Days Styling
                 daysOfWeekStyle: const DaysOfWeekStyle(
                   // Weekend days color (Sat,Sun)
-                  weekendStyle: TextStyle(color: AppColors.ultraRed),
+                  weekendStyle:
+                      TextStyle(color: Color.fromARGB(255, 56, 36, 235)),
                 ),
                 // Calendar Dates styling
                 calendarStyle: const CalendarStyle(
                   // Weekend dates color (Sat & Sun Column)
-                  weekendTextStyle: TextStyle(color: AppColors.ultraRed),
+                  weekendTextStyle:
+                      TextStyle(color: Color.fromARGB(255, 55, 52, 207)),
                   // highlighted color for today
                   todayDecoration: BoxDecoration(
-                    color: AppColors.eggPlant,
+                    color: Color.fromARGB(255, 28, 31, 199),
                     shape: BoxShape.circle,
                   ),
                   // highlighted color for selected day
                   selectedDecoration: BoxDecoration(
-                    color: AppColors.blackCoffee,
+                    color: Color.fromARGB(255, 92, 131, 214),
                     shape: BoxShape.circle,
                   ),
                   markerDecoration: BoxDecoration(
-                      color: AppColors.ultraRed, shape: BoxShape.circle),
+                      color: Color.fromARGB(255, 67, 85, 163),
+                      shape: BoxShape.circle),
                 ),
                 selectedDayPredicate: (currentSelectedDate) {
                   // as per the documentation 'selectedDayPredicate' needs to determine
@@ -255,9 +198,9 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
             Padding(
               padding: const EdgeInsets.only(right: 130, bottom: 16),
               child: Text(
-                'Date Event : 20/07/2022 ',
+                'Date Event : 20/10/2022 ',
                 style: TextStyle(
-                    color: Color.fromARGB(255, 131, 73, 126),
+                    color: Color.fromARGB(255, 46, 14, 228),
                     fontWeight: FontWeight.bold,
                     fontSize: 15),
               ),
@@ -267,7 +210,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
               child: Text(
                 'Event Title : Formation Electricité',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 90, 90, 90),
                     fontWeight: FontWeight.bold,
                     fontSize: 15),
               ),
@@ -277,7 +220,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
               child: Text(
                 'Description : Electricité et Batiment',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 90, 90, 90),
                     fontWeight: FontWeight.bold,
                     fontSize: 15),
               ),
@@ -285,7 +228,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
             Divider(
               endIndent: 30,
               indent: 30,
-              color: Color.fromARGB(255, 167, 166, 166),
+              color: Color.fromARGB(255, 83, 83, 83),
             ),
             Padding(
               padding: const EdgeInsets.only(right: 250, bottom: 12),
@@ -293,9 +236,9 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
             Padding(
               padding: const EdgeInsets.only(right: 130, bottom: 16),
               child: Text(
-                'Date Event : 30/06/2022 ',
+                'Date Event : 30/11/2022 ',
                 style: TextStyle(
-                    color: Color.fromARGB(255, 131, 73, 126),
+                    color: Color.fromARGB(255, 46, 14, 228),
                     fontWeight: FontWeight.bold,
                     fontSize: 15),
               ),
@@ -305,7 +248,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
               child: Text(
                 'Event Title : Formation Mécatronique',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 90, 90, 90),
                     fontWeight: FontWeight.bold,
                     fontSize: 15),
               ),
@@ -315,7 +258,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
               child: Text(
                 'Description : Electronique et Mécanique',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 90, 90, 90),
                     fontWeight: FontWeight.bold,
                     fontSize: 15),
               ),

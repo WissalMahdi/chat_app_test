@@ -6,7 +6,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 class UploadPostApprenant with ChangeNotifier {
@@ -61,7 +60,7 @@ class UploadPostApprenant with ChangeNotifier {
             height: MediaQuery.of(context).size.height * 0.1,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                color: Color.fromARGB(255, 49, 5, 53),
+                color: Color.fromARGB(255, 81, 90, 214),
                 borderRadius: BorderRadius.circular(12)),
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
@@ -80,13 +79,13 @@ class UploadPostApprenant with ChangeNotifier {
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     MaterialButton(
-                        color: Colors.blue,
+                        color: Color.fromARGB(255, 255, 255, 255),
                         // ignore: unnecessary_const
                         child: const Text(
                           'Gallery',
                           // ignore: prefer_const_constructors
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 1, 11, 94),
                               fontWeight: FontWeight.bold,
                               fontSize: 16.0),
                         ),
@@ -95,13 +94,13 @@ class UploadPostApprenant with ChangeNotifier {
                         }),
                     // ignore: prefer_const_constructors
                     MaterialButton(
-                        color: Colors.blue,
+                        color: Color.fromARGB(255, 255, 255, 255),
                         // ignore: unnecessary_const
                         child: const Text(
                           'Camera',
                           // ignore: prefer_const_constructors
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 1, 11, 94),
                               fontWeight: FontWeight.bold,
                               fontSize: 16.0),
                         ),
@@ -124,7 +123,7 @@ class UploadPostApprenant with ChangeNotifier {
             height: MediaQuery.of(context).size.height * 0.40,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                color: Color.fromARGB(255, 49, 5, 53),
+                color: Color.fromARGB(255, 81, 90, 214),
                 borderRadius: BorderRadius.circular(12)),
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
@@ -182,7 +181,7 @@ class UploadPostApprenant with ChangeNotifier {
                         ),
                         onPressed: (() {
                           uploadPostImageToFirebase().whenComplete(() {
-                            editPostSheet(context);
+                            //  editPostSheet(context);
                             print('Image uploaded');
                           });
                         }),
@@ -192,134 +191,6 @@ class UploadPostApprenant with ChangeNotifier {
                 )
               ],
             ),
-          );
-        });
-  }
-
-  editPostSheet(BuildContext context) {
-    return showModalBottomSheet(
-        isScrollControlled: true,
-        context: context,
-        builder: (context) {
-          return Container(
-            child: Column(
-              // ignore: prefer_const_literals_to_create_immutables
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 150.0),
-                  child: Divider(
-                    thickness: 4.0,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Column(
-                          children: [
-                            IconButton(
-                                onPressed: (() {}),
-                                icon: Icon(
-                                  Icons.image_aspect_ratio,
-                                  color: Colors.green,
-                                )),
-                            IconButton(
-                                onPressed: (() {}),
-                                icon: Icon(
-                                  Icons.fit_screen,
-                                  color: Colors.yellow,
-                                )),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        height: 200.0,
-                        width: 300.0,
-                        child: Image.file(
-                          uploadPostImage!,
-                          fit: BoxFit.contain,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: [
-                      SizedBox(
-                        height: 30.0,
-                        width: 30.0,
-                        child: Icon(Icons.add_to_home_screen),
-                      ),
-                      Container(
-                        height: 110.0,
-                        width: 3.0,
-                        color: Color.fromARGB(255, 185, 189, 194),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Container(
-                          height: 100.0,
-                          width: 300.0,
-                          child: TextField(
-                            maxLines: 5,
-                            textCapitalization: TextCapitalization.words,
-                            inputFormatters: [
-                              LengthLimitingTextInputFormatter(100)
-                            ],
-                            maxLengthEnforced: true,
-                            maxLength: 100,
-                            controller: captionController,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold),
-                            decoration: InputDecoration(
-                              hintText: 'Add a caption...',
-                              hintStyle: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                MaterialButton(
-                  child: Text(
-                    'Share',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.0),
-                  ),
-                  onPressed: (() async {
-                    uploadPostData(captionController.text, {
-                      'postimage': getUploadPostImageUrl,
-                      'caption': captionController.text,
-                      'time': Timestamp.now(),
-                      'useremail': userData!.email,
-                      'username': userData!.displayName,
-                      'useruid': userData!.uid,
-                      'imageUrl': uploadPostImageUrl,
-                    }).whenComplete(() {
-                      Navigator.pop(context);
-                    });
-                  }),
-                  color: Colors.blue,
-                )
-              ],
-            ),
-            height: MediaQuery.of(context).size.height * 0.75,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 52, 53, 54),
-                borderRadius: BorderRadius.circular(12.0)),
           );
         });
   }

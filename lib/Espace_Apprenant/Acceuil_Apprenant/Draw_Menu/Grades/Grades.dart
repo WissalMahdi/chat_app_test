@@ -19,9 +19,9 @@ class _DataTableExample extends State<Grades> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Color.fromARGB(255, 49, 49, 49),
+          backgroundColor: Color.fromARGB(255, 214, 223, 233),
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 105, 33, 105),
+            backgroundColor: Color.fromARGB(255, 48, 117, 182),
             title: Text('Grades'),
             leading: IconButton(
                 icon: const Icon(Icons.arrow_back),
@@ -35,11 +35,11 @@ class _DataTableExample extends State<Grades> {
                 child: Padding(
               padding: const EdgeInsets.only(top: 25.0),
               child: Text(
-                'Mouhamed Becha (EI 21)',
+                'Karim Bani (EI 21)',
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                    color: Color.fromARGB(255, 11, 2, 114)),
               ),
             )),
             SizedBox(
@@ -53,19 +53,19 @@ class _DataTableExample extends State<Grades> {
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 173, 50, 157)))),
+                            color: Color.fromARGB(255, 22, 8, 173)))),
                 DataColumn(
                     label: Text('DC',
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 173, 50, 157)))),
+                            color: Color.fromARGB(255, 22, 8, 173)))),
                 DataColumn(
                     label: Text('DS',
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 173, 50, 157)))),
+                            color: Color.fromARGB(255, 22, 8, 173)))),
               ],
               // ignore: prefer_const_literals_to_create_immutables
               rows: [
@@ -73,71 +73,81 @@ class _DataTableExample extends State<Grades> {
                 DataRow(cells: [
                   DataCell(Text(
                     'Electricité',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
                   )),
                   DataCell(Text('14')),
                   DataCell(Text('11')),
                 ]),
                 // ignore: prefer_const_literals_to_create_immutables
                 DataRow(cells: [
-                  DataCell(
-                      Text('Français', style: TextStyle(color: Colors.white))),
+                  DataCell(Text('Français',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold))),
                   DataCell(Text('10')),
                   DataCell(Text('6')),
                 ]),
                 // ignore: prefer_const_literals_to_create_immutables
                 DataRow(cells: [
-                  DataCell(
-                      Text('Mécanique', style: TextStyle(color: Colors.white))),
+                  DataCell(Text('Mécanique',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold))),
                   DataCell(Text('11')),
                   DataCell(Text('14')),
                 ]),
                 // ignore: prefer_const_literals_to_create_immutables
                 DataRow(cells: [
-                  DataCell(
-                      Text('Anglais', style: TextStyle(color: Colors.white))),
+                  DataCell(Text('Anglais',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold))),
                   DataCell(Text('9')),
                   DataCell(Text('14')),
                 ]),
                 // ignore: prefer_const_literals_to_create_immutables
                 DataRow(cells: [
                   DataCell(Text('Maintenace',
-                      style: TextStyle(color: Colors.white))),
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold))),
                   DataCell(Text('6')),
                   DataCell(Text('10')),
                 ]),
                 // ignore: prefer_const_literals_to_create_immutables
                 DataRow(cells: [
-                  DataCell(
-                      Text('Plomberie', style: TextStyle(color: Colors.white))),
+                  DataCell(Text('Plomberie',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold))),
                   DataCell(Text('19')),
                   DataCell(Text('9')),
                 ]),
                 // ignore: prefer_const_literals_to_create_immutables
                 DataRow(cells: [
                   DataCell(Text('Informatique',
-                      style: TextStyle(color: Colors.white))),
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold))),
                   DataCell(Text('9')),
                   DataCell(Text('16')),
                 ]),
                 // ignore: prefer_const_literals_to_create_immutables
                 DataRow(cells: [
                   DataCell(Text('Climatisation',
-                      style: TextStyle(color: Colors.white))),
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold))),
                   DataCell(Text('8')),
                   DataCell(Text('10')),
                 ]),
                 // ignore: prefer_const_literals_to_create_immutables
                 DataRow(cells: [
                   DataCell(Text('Electronique',
-                      style: TextStyle(color: Colors.white))),
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold))),
                   DataCell(Text('15')),
                   DataCell(Text('10')),
                 ]),
                 // ignore: prefer_const_literals_to_create_immutables
                 DataRow(cells: [
-                  DataCell(
-                      Text('Embarqué', style: TextStyle(color: Colors.white))),
+                  DataCell(Text('Embarqué',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold))),
                   DataCell(Text('11')),
                   DataCell(Text('15')),
                 ]),

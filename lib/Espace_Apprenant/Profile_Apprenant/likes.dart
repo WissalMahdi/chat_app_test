@@ -4,11 +4,11 @@ import 'package:chat_app_test/Espace_Admin/Profile_Admin/ProfilAdmin.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(likes());
+  runApp(likesAppr());
 }
 
 // ignore: camel_case_types, use_key_in_widget_constructors
-class likes extends StatelessWidget {
+class likesAppr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(debugShowCheckedModeBanner: false, home: MyHomePage());

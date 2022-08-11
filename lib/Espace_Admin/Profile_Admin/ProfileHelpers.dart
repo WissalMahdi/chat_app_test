@@ -123,7 +123,7 @@ class RouteTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 71, 5, 57),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
         title: Text('Post'),
         actions: <Widget>[
           PopupMenuButton<String>(
@@ -139,9 +139,8 @@ class RouteTwo extends StatelessWidget {
                             context: context,
                             builder: (context) {
                               return AlertDialog(
-                                backgroundColor: Color.fromARGB(255, 20, 2, 18),
-                                title: Text(
-                                    'Are you sure about deleting this post?',
+                                backgroundColor: Color.fromARGB(255, 1, 14, 73),
+                                title: Text('Delete this element?',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 16.0,
@@ -162,11 +161,11 @@ class RouteTwo extends StatelessWidget {
                                     },
                                   ),
                                   MaterialButton(
-                                    color: Colors.red,
+                                    color: Color.fromARGB(255, 202, 211, 238),
                                     child: Text(
                                       'Yes',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Color.fromARGB(255, 5, 0, 78),
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18.0,
                                       ),
@@ -215,6 +214,7 @@ class RouteTwo extends StatelessWidget {
                           child: Icon(
                             Icons.favorite,
                             color: Colors.red,
+                            size: 28,
                           ),
                           onTap: () {
                             Navigator.of(context).pushReplacement(
@@ -247,7 +247,7 @@ class RouteTwo extends StatelessWidget {
                             child: Icon(
                               Icons.comment,
                               color: Color.fromARGB(255, 17, 17, 17),
-                              size: 22.0,
+                              size: 28.0,
                             ),
                           ),
                           SizedBox(
@@ -354,7 +354,7 @@ class ProfileHelpers with ChangeNotifier {
                           icon: Icon(
                             Icons.add_a_photo,
                             size: 30,
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: Color.fromARGB(255, 3, 0, 39),
                           ),
                         ))
                   ],
@@ -365,7 +365,7 @@ class ProfileHelpers with ChangeNotifier {
                     'Cfm Nabeul',
                     // ' ${userData?.displayName}',
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 2, 4, 156),
                         fontWeight: FontWeight.bold,
                         fontSize: 16.0),
                   ),
@@ -391,7 +391,7 @@ class ProfileHelpers with ChangeNotifier {
 
                         // ignore: prefer_const_constructors
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 2, 4, 156),
                             fontWeight: FontWeight.bold,
                             fontSize: 12.0),
                       ),
@@ -414,7 +414,7 @@ class ProfileHelpers with ChangeNotifier {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 47, 18, 58),
+                            color: Color.fromARGB(255, 48, 117, 182),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -445,7 +445,7 @@ class ProfileHelpers with ChangeNotifier {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 47, 18, 58),
+                            color: Color.fromARGB(255, 48, 117, 182),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -478,7 +478,7 @@ class ProfileHelpers with ChangeNotifier {
                   padding: const EdgeInsets.only(top: 16.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 47, 18, 58),
+                        color: Color.fromARGB(255, 48, 117, 182),
                         borderRadius: BorderRadius.circular(15.0)),
                     height: 70.0,
                     width: 80.0,
@@ -517,9 +517,9 @@ class ProfileHelpers with ChangeNotifier {
     return Center(
       child: SizedBox(
         height: 25.0,
-        width: 350.0,
+        width: 300.0,
         child: Divider(
-          color: Color.fromARGB(255, 184, 157, 182),
+          color: Color.fromARGB(255, 90, 72, 250),
         ),
       ),
     );
@@ -532,8 +532,6 @@ class ProfileHelpers with ChangeNotifier {
         children: [
           Container(
             child: RouteOne(),
-
-            //child: Image.asset('images/test.jpg'),
             height: MediaQuery.of(context).size.height * 0.63,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
@@ -545,23 +543,4 @@ class ProfileHelpers with ChangeNotifier {
       ),
     );
   }
-
-  /* Widget middleProfile(BuildContext context, dynamic snapshot) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          child: Row(
-            children: [
-              TextButton(
-                  onPressed: (() {
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => Apprenant()));
-                  }),
-                  child: Text('Modifier Profile'))
-            ],
-          ),
-        )
-      ],
-    );*/
 }

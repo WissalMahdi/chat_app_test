@@ -16,7 +16,7 @@ class HomeAdmin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 49, 48, 48),
+      backgroundColor: Color.fromARGB(255, 165, 185, 209),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: Provider.of<HomeHelpers>(context, listen: false).appBar(context),
@@ -43,7 +43,7 @@ class NavigationDrawer extends StatelessWidget {
       );
 
   Widget buildHeader(BuildContext context) => Material(
-        color: Color.fromARGB(255, 26, 2, 26),
+        color: Color.fromARGB(255, 48, 117, 182),
         child: InkWell(
           onTap: () {
             Navigator.of(context).pushReplacement(
@@ -55,12 +55,9 @@ class NavigationDrawer extends StatelessWidget {
             child: Column(
               children: const [
                 CircleAvatar(
-                  backgroundColor: Color(0xffE6E6E6),
-                  radius: 52.0,
-                  child: Icon(
-                    Icons.person,
-                    color: Color(0xffCCCCCC),
-                    size: 50,
+                  radius: 50,
+                  backgroundImage: NetworkImage(
+                    "https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg",
                   ),
                 ),
                 SizedBox(
@@ -135,8 +132,8 @@ class NavigationDrawer extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        backgroundColor: Color.fromARGB(255, 20, 2, 18),
-                        title: Text('Log Out Of Trendy?',
+                        backgroundColor: Color.fromARGB(255, 1, 14, 73),
+                        title: Text('Log Out Of TikTalk?',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.0,
@@ -157,11 +154,11 @@ class NavigationDrawer extends StatelessWidget {
                             },
                           ),
                           MaterialButton(
-                            color: Colors.red,
+                            color: Color.fromARGB(255, 202, 211, 238),
                             child: Text(
                               'Yes',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 5, 0, 78),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18.0,
                               ),

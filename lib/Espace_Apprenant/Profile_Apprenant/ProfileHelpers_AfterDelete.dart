@@ -2,7 +2,9 @@
 
 import 'dart:io';
 
-import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/likes.dart';
+import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/commentsPage.dart';
+import 'package:chat_app_test/Espace_Admin/Profile_Admin/likes.dart';
+import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileApprenant_After_delete.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +13,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 
-import '../Acceuil_Apprenant/commentsPage.dart';
-import 'ProfileApprenant_After_delete.dart';
-
 void main() async {
   runApp(
     MaterialApp(debugShowCheckedModeBanner: false, initialRoute: '/', routes: {
-      '/': (context) => RouteOne(),
-      '/detail': (context) => RouteTwo(image: '', name: ''),
+      '/': (context) => RouteOne1(),
+      '/detail': (context) => RouteTwo1(image: '', name: ''),
     }),
   );
 }
@@ -29,10 +28,8 @@ class PhotoItem {
   PhotoItem(this.image, this.name);
 }
 
-class RouteOne extends StatelessWidget {
+class RouteOne1 extends StatelessWidget {
   final List<PhotoItem> _items = [
-    PhotoItem("http://www.fsjegj.rnu.tn/Fr/upload/1572960712.jpg",
-        "Formation terminée avec succès merci messieurs et mesdames"),
     PhotoItem(
         "https://images.unsplash.com/photo-1553873002-785d775854c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "Il ya un multimétre disparu,est ce que quelqu'un de vous trouve-il s'il vous plait?"),
@@ -64,8 +61,8 @@ class RouteOne extends StatelessWidget {
         "http://www.mon-diplome.fr/Diplome/700-332946-Diplome+de+Maintenance+Industrielle.jpg",
         "le dépôt des diplômes sera dans le mois de septembre 2022"),
     PhotoItem(
-      "http://abcvannes-echecs.fr/wp-content/uploads/2020/03/IMG_20200227_090244_BURST001_COVER.jpg",
-      "Un club d'échecs réussi avec une bonne ambiance",
+      "https://images.tokopedia.net/img/cache/500-square/product-1/2020/7/6/batch-upload/batch-upload_ee6ab488-dbd7-4110-95fd-898c7cf6abdf.jpg",
+      "",
     ),
     PhotoItem(
         "https://cdn1.webmanagercenter.com/tekiano/wp-content/uploads/2015/11/projection-films-680x400.jpg",
@@ -90,7 +87,7 @@ class RouteOne extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => RouteTwo(
+                  builder: (context) => RouteTwo1(
                       image: _items[index].image, name: _items[index].name),
                 ),
               );
@@ -110,10 +107,10 @@ class RouteOne extends StatelessWidget {
   }
 }
 
-class RouteTwo extends StatelessWidget {
+class RouteTwo1 extends StatelessWidget {
   final String image;
   final String name;
-  RouteTwo({Key? key, required this.image, required this.name})
+  RouteTwo1({Key? key, required this.image, required this.name})
       : super(key: key);
 
   @override
@@ -216,7 +213,7 @@ class RouteTwo extends StatelessWidget {
                           onTap: () {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                    builder: (context) => likesAppr()));
+                                    builder: (context) => likes()));
                           },
                         ),
                         SizedBox(
@@ -239,7 +236,7 @@ class RouteTwo extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
-                                      builder: (context) => TestMeApp()));
+                                      builder: (context) => TestMe()));
                             },
                             child: Icon(
                               Icons.comment,
@@ -288,7 +285,7 @@ class RouteTwo extends StatelessWidget {
   }
 }
 
-class ProfileHelpersApprenant with ChangeNotifier {
+class ProfileHelpersAfterDeleteApp with ChangeNotifier {
   File? image;
   Future pickImage() async {
     try {
@@ -338,7 +335,7 @@ class ProfileHelpersApprenant with ChangeNotifier {
                           ))
                         : ClipOval(
                             child: Image.network(
-                            "https://images.unsplash.com/photo-1615813967515-e1838c1c5116?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+                            "https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg",
                             width: 120,
                             height: 120,
                             fit: BoxFit.cover,
@@ -351,7 +348,7 @@ class ProfileHelpersApprenant with ChangeNotifier {
                           icon: Icon(
                             Icons.add_a_photo,
                             size: 30,
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 3, 0, 39),
                           ),
                         ))
                   ],
@@ -483,7 +480,7 @@ class ProfileHelpersApprenant with ChangeNotifier {
                       // ignore: prefer_const_literals_to_create_immutables
                       children: [
                         Text(
-                          '15',
+                          '14',
                           // ignore: prefer_const_constructors
                           style: TextStyle(
                               color: Colors.white,
@@ -528,7 +525,7 @@ class ProfileHelpersApprenant with ChangeNotifier {
       child: Column(
         children: [
           Container(
-            child: RouteOne(),
+            child: RouteOne1(),
             height: MediaQuery.of(context).size.height * 0.63,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(

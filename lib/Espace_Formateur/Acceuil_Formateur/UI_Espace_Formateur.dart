@@ -1,7 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_literals_to_create_immutables, prefer_const_constructors, non_constant_identifier_names
 import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/ProfileFormateur.dart';
 
-import 'package:chat_app_test/Home/Search/search.dart';
+import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/Search/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -40,7 +40,6 @@ class _HomePageState extends State<EspaceFormateur> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 52, 5, 83),
         body: PageView(
           controller: FormateurPageController,
           children: [HomeFormateur(), Search(), ProfileFormateur()],
@@ -53,6 +52,6 @@ class _HomePageState extends State<EspaceFormateur> {
         ),
         bottomNavigationBar:
             Provider.of<HomePageHelpersFormateur>(context, listen: false)
-                .bottomNavBaar(pageIndeex, FormateurPageController));
+                .bottomNaavBar(pageIndeex, FormateurPageController));
   }
 }

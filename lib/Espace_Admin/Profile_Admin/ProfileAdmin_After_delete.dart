@@ -13,7 +13,7 @@ class ProfileAdminAfterDelete extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromARGB(255, 230, 230, 230),
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
@@ -34,7 +34,7 @@ class ProfileAdminAfterDelete extends StatelessWidget {
             },
           )
         ],
-        backgroundColor: Color.fromARGB(255, 134, 72, 158).withOpacity(0.4),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
         title: RichText(
             text: TextSpan(
                 text: 'My',
@@ -46,7 +46,7 @@ class ProfileAdminAfterDelete extends StatelessWidget {
               TextSpan(
                   text: 'Profile',
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0),
+                      color: Color.fromARGB(255, 21, 1, 110),
                       fontWeight: FontWeight.bold,
                       fontSize: 25.0))
             ])),
@@ -72,16 +72,14 @@ class ProfileAdminAfterDelete extends StatelessWidget {
                   children: [
                     Provider.of<ProfileHelpersAfterDelete>(context,
                             listen: false)
-                        .headerProfile1(
+                        .headerProfile(
                             context, snapshot.data as DocumentSnapshot),
-                    //    Provider.of<ProfileHelpers>(context, listen: false)
-                    //      .middleProfile(context, snapshot),
                     Provider.of<ProfileHelpersAfterDelete>(context,
                             listen: false)
-                        .divider1(),
+                        .divider(),
                     Provider.of<ProfileHelpersAfterDelete>(context,
                             listen: false)
-                        .footerProfile1(context, snapshot)
+                        .footerProfile(context, snapshot)
                   ],
                 );
               }
@@ -89,7 +87,7 @@ class ProfileAdminAfterDelete extends StatelessWidget {
           ),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.0),
-              color: Color.fromARGB(255, 219, 192, 228).withOpacity(0.6)),
+              color: Color.fromARGB(255, 197, 208, 238)),
         ),
       )),
     );

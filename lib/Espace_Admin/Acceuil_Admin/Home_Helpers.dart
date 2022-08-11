@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 
 import 'package:provider/provider.dart';
 
+import '../Profile_Admin/ProfilAdmin.dart';
 import 'UploadPost.dart';
 import 'feedBox.dart';
 
@@ -50,7 +51,7 @@ class HomeHelpers with ChangeNotifier {
   ];
   Widget appBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 51, 22, 48),
+      backgroundColor: Color.fromARGB(255, 48, 117, 182),
       centerTitle: true,
       // ignore: prefer_const_literals_to_create_immutables
       actions: [
@@ -87,7 +88,7 @@ class HomeHelpers with ChangeNotifier {
             TextSpan(
                 text: 'Talk',
                 style: TextStyle(
-                    color: Color.fromARGB(255, 120, 59, 148),
+                    color: Color.fromARGB(255, 2, 4, 114),
                     fontWeight: FontWeight.bold,
                     fontSize: 25.0))
           ])),
@@ -106,7 +107,7 @@ class HomeHelpers with ChangeNotifier {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: mainBlack,
+                color: Color.fromARGB(255, 238, 244, 247),
                 borderRadius: BorderRadius.circular(12.0),
               ),
               child: Padding(
@@ -116,9 +117,16 @@ class HomeHelpers with ChangeNotifier {
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(
-                          radius: 25.0,
-                          backgroundImage: NetworkImage(avatarUrl[0]),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => ProfileAdmin()));
+                          },
+                          child: CircleAvatar(
+                            radius: 25.0,
+                            backgroundImage: NetworkImage(avatarUrl[0]),
+                          ),
                         ),
                         SizedBox(
                           width: 10.0,
@@ -130,13 +138,13 @@ class HomeHelpers with ChangeNotifier {
                             },
                             // ignore: prefer_const_constructors
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 3, 3, 3),
                             ),
                             decoration: InputDecoration(
                                 contentPadding: EdgeInsets.only(left: 25.0),
                                 hintText: "Post something...",
                                 filled: true,
-                                fillColor: mainGrey,
+                                fillColor: Color.fromARGB(255, 187, 201, 218),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.0),
                                   borderSide: BorderSide.none,
@@ -231,7 +239,7 @@ class HomeHelpers with ChangeNotifier {
                                 onPressed: (() {}),
                                 icon: Icon(
                                   Icons.fit_screen,
-                                  color: Color.fromARGB(255, 155, 17, 97),
+                                  color: Color.fromARGB(255, 17, 100, 155),
                                 )),
                           ],
                         ),
@@ -287,25 +295,27 @@ class HomeHelpers with ChangeNotifier {
                   ),
                 ),
                 MaterialButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
                   child: Text(
                     'Share',
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18.0),
+                        fontSize: 20.0),
                   ),
                   onPressed: (() async {
                     _setText();
                   }),
-                  color: Color.fromARGB(255, 148, 10, 141),
+                  color: Color.fromARGB(255, 8, 37, 199),
                 ),
                 // Text(text),
               ],
             ),
-            height: MediaQuery.of(context).size.height * 0.65,
+            height: MediaQuery.of(context).size.height * 0.50,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                color: Color.fromARGB(255, 52, 53, 54),
+                color: Color.fromARGB(255, 187, 201, 218),
                 borderRadius: BorderRadius.circular(12.0)),
           );
         });

@@ -19,10 +19,10 @@ class _TableExample extends State<Results> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Color.fromARGB(255, 39, 38, 38),
+          backgroundColor: Color.fromARGB(255, 214, 223, 233),
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 102, 10, 64),
-            title: const Text('Flutter Table Example'),
+            backgroundColor: Color.fromARGB(255, 48, 117, 182),
+            title: const Text('Result Page'),
             leading: IconButton(
                 icon: const Icon(Icons.arrow_back),
                 onPressed: () {
@@ -35,8 +35,11 @@ class _TableExample extends State<Results> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                'Mouhamed Becha (EI 21)',
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                'Karim Bani (EI 21)',
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Color.fromARGB(255, 11, 2, 114),
+                    fontWeight: FontWeight.bold),
               ),
             ),
             Container(
@@ -44,18 +47,18 @@ class _TableExample extends State<Results> {
               child: Table(
                 defaultColumnWidth: const FixedColumnWidth(250.0),
                 border: TableBorder.all(
-                    color: Color.fromARGB(255, 243, 241, 241),
+                    color: Color.fromARGB(255, 4, 45, 87),
                     style: BorderStyle.solid,
                     width: 2),
                 children: [
                   TableRow(children: [
                     // ignore: prefer_const_literals_to_create_immutables
                     Column(children: [
-                      const Text('Résultat',
+                      const Text('Result',
                           style: const TextStyle(
-                              fontSize: 25.0,
+                              fontSize: 22.0,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white)),
+                              color: Color.fromARGB(255, 20, 23, 212))),
                       SizedBox(
                         height: 20,
                       )
@@ -65,7 +68,8 @@ class _TableExample extends State<Results> {
                     Column(children: [
                       const Text('14.6',
                           style: const TextStyle(
-                              fontSize: 20.0, color: Colors.white)),
+                              fontSize: 20.0,
+                              color: Color.fromARGB(255, 11, 2, 114))),
                       SizedBox(
                         height: 20,
                       )

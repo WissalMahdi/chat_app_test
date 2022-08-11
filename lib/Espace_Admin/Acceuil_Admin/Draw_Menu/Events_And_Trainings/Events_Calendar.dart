@@ -6,7 +6,7 @@ import 'package:table_calendar/table_calendar.dart';
 import '../../UI_Espace_Admin.dart';
 import 'Formulaire_Training.dart';
 
-const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+//const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
 class CustomTableCalendar extends StatefulWidget {
   const CustomTableCalendar({Key? key}) : super(key: key);
@@ -48,7 +48,12 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
     await showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: const Text('New Event'),
+              title: const Text(
+                'New Event',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 48, 117, 182),
+                    fontWeight: FontWeight.bold),
+              ),
               content: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
@@ -115,13 +120,15 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
       decoration: InputDecoration(
         labelText: hint ?? '',
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: AppColors.eggPlant, width: 1.5),
+          borderSide: const BorderSide(
+              color: Color.fromARGB(255, 26, 28, 179), width: 1.5),
           borderRadius: BorderRadius.circular(
             10.0,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: AppColors.eggPlant, width: 1.5),
+          borderSide: const BorderSide(
+              color: Color.fromARGB(255, 31, 30, 30), width: 1.5),
           borderRadius: BorderRadius.circular(
             10.0,
           ),
@@ -133,9 +140,9 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 18, 32, 47),
+      backgroundColor: Color.fromARGB(255, 219, 223, 226),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 71, 70, 68),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
         title: const Text('Events & Training Calendar',
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -155,14 +162,15 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
         child: Column(
           children: [
             Card(
-              color: Color.fromARGB(255, 71, 70, 68),
+              color: Color.fromARGB(255, 195, 195, 207),
               margin: const EdgeInsets.all(8.0),
               elevation: 5.0,
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
                   Radius.circular(10),
                 ),
-                side: BorderSide(color: AppColors.blackCoffee, width: 2.0),
+                side: BorderSide(
+                    color: Color.fromARGB(255, 34, 34, 36), width: 2.0),
               ),
               child: TableCalendar(
                 focusedDay: _focusedCalendarDate,
@@ -186,15 +194,16 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
                 eventLoader: _listOfDayEvents,
                 // Calendar Header Styling
                 headerStyle: const HeaderStyle(
-                  titleTextStyle:
-                      TextStyle(color: AppColors.babyPowder, fontSize: 20.0),
+                  titleTextStyle: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontSize: 20.0),
                   decoration: BoxDecoration(
-                      color: AppColors.eggPlant,
+                      color: Color.fromARGB(151, 74, 96, 138),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10))),
-                  formatButtonTextStyle:
-                      TextStyle(color: AppColors.ultraRed, fontSize: 16.0),
+                  formatButtonTextStyle: TextStyle(
+                      color: Color.fromARGB(255, 102, 36, 255), fontSize: 16.0),
                   formatButtonDecoration: BoxDecoration(
                     color: AppColors.babyPowder,
                     borderRadius: BorderRadius.all(
@@ -215,24 +224,27 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
                 // Calendar Days Styling
                 daysOfWeekStyle: const DaysOfWeekStyle(
                   // Weekend days color (Sat,Sun)
-                  weekendStyle: TextStyle(color: AppColors.ultraRed),
+                  weekendStyle:
+                      TextStyle(color: Color.fromARGB(255, 56, 36, 235)),
                 ),
                 // Calendar Dates styling
                 calendarStyle: const CalendarStyle(
                   // Weekend dates color (Sat & Sun Column)
-                  weekendTextStyle: TextStyle(color: AppColors.ultraRed),
+                  weekendTextStyle:
+                      TextStyle(color: Color.fromARGB(255, 55, 52, 207)),
                   // highlighted color for today
                   todayDecoration: BoxDecoration(
-                    color: AppColors.eggPlant,
+                    color: Color.fromARGB(255, 28, 31, 199),
                     shape: BoxShape.circle,
                   ),
                   // highlighted color for selected day
                   selectedDecoration: BoxDecoration(
-                    color: AppColors.blackCoffee,
+                    color: Color.fromARGB(255, 92, 131, 214),
                     shape: BoxShape.circle,
                   ),
                   markerDecoration: BoxDecoration(
-                      color: AppColors.ultraRed, shape: BoxShape.circle),
+                      color: Color.fromARGB(255, 67, 85, 163),
+                      shape: BoxShape.circle),
                 ),
                 selectedDayPredicate: (currentSelectedDate) {
                   // as per the documentation 'selectedDayPredicate' needs to determine
@@ -255,7 +267,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
               (myEvents) => ListTile(
                 leading: const Icon(
                   Icons.done,
-                  color: AppColors.eggPlant,
+                  color: Color.fromARGB(255, 48, 78, 175),
                 ),
                 title: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
@@ -276,7 +288,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
                     width: 130,
                     height: 50,
                     child: RaisedButton(
-                      color: Color(0xFF6d435a),
+                      color: Color.fromARGB(255, 48, 117, 182),
                       child: Text(
                         "Add Event",
                         style: TextStyle(
@@ -296,7 +308,7 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
                     width: 130,
                     height: 50,
                     child: RaisedButton(
-                      color: Color(0xFF6d435a),
+                      color: Color.fromARGB(255, 48, 117, 182),
                       child: Text(
                         "Add Meeting",
                         style: TextStyle(
@@ -332,7 +344,7 @@ class MyEvents {
   String toString() => eventTitle;
 }
 
-class AppColors {
+/*class AppColors {
   AppColors._();
 
   static const Color blackCoffee = Color(0xFF352d39);
@@ -340,4 +352,4 @@ class AppColors {
   static const Color celeste = Color(0xFFb1ede8);
   static const Color babyPowder = Color(0xFFFFFcF9);
   static const Color ultraRed = Color(0xFFFF6978);
-}
+}*/

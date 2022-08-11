@@ -18,7 +18,7 @@ class HomeFormateur extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 49, 48, 48),
+      backgroundColor: Color.fromARGB(255, 165, 185, 209),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: Provider.of<HomeHelpersFormateur>(context, listen: false)
@@ -47,7 +47,7 @@ class NavigationDrawer extends StatelessWidget {
       );
 
   Widget buildHeader(BuildContext context) => Material(
-        color: Color.fromARGB(255, 26, 2, 26),
+        color: Color.fromARGB(255, 48, 117, 182),
         child: InkWell(
           onTap: () {
             Navigator.of(context).pushReplacement(
@@ -61,24 +61,22 @@ class NavigationDrawer extends StatelessWidget {
                 CircleAvatar(
                   backgroundColor: Color(0xffE6E6E6),
                   radius: 52.0,
-                  child: Icon(
-                    Icons.person,
-                    color: Color(0xffCCCCCC),
-                    size: 50,
+                  backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                   ),
                 ),
                 SizedBox(
                   height: 12,
                 ),
                 Text(
-                  'CFM Nabeul',
+                  'Riadh Hajji',
                   style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'cfmnabeul@gmail.com',
+                  'riadghhajji@gmail.com',
                   style: TextStyle(fontSize: 15, color: Colors.white),
                 ),
               ],
@@ -146,8 +144,8 @@ class NavigationDrawer extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        backgroundColor: Color.fromARGB(255, 20, 2, 18),
-                        title: Text('Log Out Of Trendy?',
+                        backgroundColor: Color.fromARGB(255, 1, 14, 73),
+                        title: Text('Log Out Of TikTalk?',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.0,
@@ -168,11 +166,11 @@ class NavigationDrawer extends StatelessWidget {
                             },
                           ),
                           MaterialButton(
-                            color: Colors.red,
+                            color: Color.fromARGB(255, 202, 211, 238),
                             child: Text(
                               'Yes',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 5, 0, 78),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18.0,
                               ),

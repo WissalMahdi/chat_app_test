@@ -9,9 +9,9 @@ class HomePageHelpers with ChangeNotifier {
         currentIndex: index,
         bubbleCurve: Curves.bounceIn,
         scaleCurve: Curves.decelerate,
-        selectedColor: Color.fromARGB(255, 71, 60, 80),
+        selectedColor: Color.fromARGB(255, 9, 17, 134),
         unSelectedColor: Colors.white,
-        strokeColor: Color.fromARGB(255, 134, 72, 158),
+        strokeColor: Color.fromARGB(255, 82, 55, 233),
         scaleFactor: 0.5,
         iconSize: 30.0,
         onTap: (val) {
@@ -19,7 +19,7 @@ class HomePageHelpers with ChangeNotifier {
           pageController.jumpToPage(val);
           notifyListeners();
         },
-        backgroundColor: Color.fromARGB(255, 54, 4, 54),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
         items: [
           CustomNavigationBarItem(
               icon: Icon(Icons.home_outlined),

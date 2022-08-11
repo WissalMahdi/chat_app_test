@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../UI_Espace_Apprenant.dart';
 import 'pdf_viewer_page.dart';
 
+// ignore: camel_case_types
 class courses extends StatefulWidget {
   const courses({Key? key}) : super(key: key);
 
@@ -19,10 +20,9 @@ class _coursesState extends State<courses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        //
-        // backgroundColor: Color.fromARGB(255, 97, 94, 94),
+        backgroundColor: Color.fromARGB(255, 236, 235, 235),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 128, 17, 128),
+          backgroundColor: Color.fromARGB(255, 48, 117, 182),
           title: const Text('Courses',
               style: TextStyle(
                 fontWeight: FontWeight.bold,

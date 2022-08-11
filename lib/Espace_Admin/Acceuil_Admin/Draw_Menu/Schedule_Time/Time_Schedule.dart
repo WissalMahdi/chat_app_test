@@ -30,10 +30,9 @@ class _MyGridScreenState extends State<MyGridScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 44, 40, 40),
       appBar: AppBar(
         title: Text("Time Schedule"),
-        backgroundColor: Color.fromARGB(255, 83, 87, 83),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
         leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             iconSize: 25,
@@ -60,7 +59,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 245, 248, 248)))),
-            color: Color.fromARGB(255, 58, 133, 136),
+            color: Color.fromARGB(255, 2, 18, 109),
           ),
           Container(
             //  margin: EdgeInsets.all(10),
@@ -72,7 +71,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 245, 248, 248)))),
-            color: Color.fromARGB(255, 129, 205, 209),
+            color: Color.fromARGB(255, 133, 156, 233),
           ),
           Container(
             // margin: EdgeInsets.all(10),
@@ -84,7 +83,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 245, 248, 248)))),
-            color: Color.fromARGB(255, 26, 99, 102),
+            color: Color.fromARGB(255, 83, 98, 182),
           ),
           InkWell(
             onTap: (() =>
@@ -104,7 +103,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 124, 205, 207),
+              color: Color.fromARGB(255, 83, 98, 182),
             ),
           ),
           InkWell(
@@ -125,7 +124,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 31, 98, 100),
+              color: Color.fromARGB(255, 2, 18, 109),
             ),
           ),
           InkWell(
@@ -146,7 +145,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 71, 168, 172),
+              color: Color.fromARGB(255, 133, 156, 233),
             ),
           ),
           InkWell(
@@ -167,7 +166,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 124, 205, 207),
+              color: Color.fromARGB(255, 133, 156, 233),
             ),
           ),
           InkWell(
@@ -188,7 +187,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 31, 98, 100),
+              color: Color.fromARGB(255, 83, 98, 182),
             ),
           ),
           InkWell(
@@ -209,7 +208,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 71, 168, 172),
+              color: Color.fromARGB(255, 2, 18, 109),
             ),
           ),
           InkWell(
@@ -230,7 +229,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 7, 79, 80),
+              color: Color.fromARGB(255, 2, 18, 109),
             ),
           ),
           InkWell(
@@ -251,7 +250,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 102, 176, 179),
+              color: Color.fromARGB(255, 133, 156, 233),
             ),
           ),
           InkWell(
@@ -272,7 +271,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 65, 158, 161),
+              color: Color.fromARGB(255, 83, 98, 182),
             ),
           ),
           InkWell(
@@ -293,7 +292,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 124, 205, 207),
+              color: Color.fromARGB(255, 83, 98, 182),
             ),
           ),
           InkWell(
@@ -314,7 +313,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 31, 98, 100),
+              color: Color.fromARGB(255, 2, 18, 109),
             ),
           ),
           InkWell(
@@ -335,7 +334,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 245, 248, 248)))),
-              color: Color.fromARGB(255, 71, 168, 172),
+              color: Color.fromARGB(255, 133, 156, 233),
             ),
           ),
         ],

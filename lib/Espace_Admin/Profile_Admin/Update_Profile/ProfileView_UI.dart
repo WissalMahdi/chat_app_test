@@ -47,7 +47,18 @@ class _ProfileViewState extends State<ProfileView> {
           Expanded(
               child: Container(
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 155, 126, 155),
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                // ignore: prefer_const_
+                // literals_to_create_immutables
+                // ignore: prefer_const_literals_to_create_immutables
+                colors: [
+                  Color.fromARGB(255, 5, 26, 145),
+                  Color.fromARGB(255, 122, 183, 233),
+                  Color.fromARGB(255, 66, 92, 240),
+                ],
+              ),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20.0),
                 bottomRight: Radius.circular(20.0),
@@ -95,7 +106,7 @@ class _ProfileViewState extends State<ProfileView> {
                           icon: Icon(
                             Icons.add_a_photo,
                             size: 30,
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: Color.fromARGB(255, 16, 4, 172),
                           ),
                         ))
                   ],

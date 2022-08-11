@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/commentsPage.dart';
+import 'package:chat_app_test/Espace_Admin/Profile_Admin/likes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -22,54 +23,54 @@ void main() async {
   );
 }
 
-class PhotoItem1 {
+class PhotoItem {
   final String image;
   final String name;
-  PhotoItem1(this.image, this.name);
+  PhotoItem(this.image, this.name);
 }
 
 class RouteOne1 extends StatelessWidget {
-  final List<PhotoItem1> _items = [
-    PhotoItem1(
+  final List<PhotoItem> _items = [
+    PhotoItem(
         "https://images.unsplash.com/photo-1553873002-785d775854c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "Il ya un multimétre disparu,est ce que quelqu'un de vous trouve-il?"),
-    PhotoItem1(
+    PhotoItem(
         "https://www.gobelins.fr/sites/default/files/styles/news_main/public/thumbnails/image/cbaillou-adobestock_88932545_light.jpg?itok=WUPlgO9C",
         "une formation sera programmé sur 3 jours pour la semaine prochaine, vous pouvez le trouver dans les formations disponibless  "),
-    PhotoItem1(
+    PhotoItem(
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2QESytfDu0khjjBntDGeehSnBfbeDDrVPQ7T4IKtmO4l66EVs43XRMSl6II6ZDZfPvTQ&usqp=CAU",
         "il y a une carte d'identité perdue, vous pouvez la trouver dans l'administration"),
-    PhotoItem1(
+    PhotoItem(
         "https://images.unsplash.com/photo-1454988501794-2992f706932e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
         "des nouveaux matériaux à venir demain pour vos TP, Préparez..."),
-    PhotoItem1(
+    PhotoItem(
         "https://images.unsplash.com/photo-1606676539940-12768ce0e762?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
         "Si quelqu'un d'entre vous avez une perceuse, il vaut mieux qu'il l'apportait pour ses TP car le nombre de perceuses qu'on a possèdé n'est pas suffisant"),
-    PhotoItem1(
+    PhotoItem(
         "https://images.unsplash.com/photo-1620332114059-c88fe9862928?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1279&q=80",
         ""),
-    PhotoItem1(
+    PhotoItem(
         "https://siena.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_in_line/2021/05/13/node_785354/2610002/public/2021/05/13/B9727017888Z.1_20210513111736_000%2BGQVI47ASB.1-0.png?itok=cBteAaKc1620897463",
         "Un calendrier scolaire est disponible pour vous dès maintenant"),
-    PhotoItem1(
+    PhotoItem(
         "https://www.lacroixblanche.org/wp-content/uploads/2020/07/R%C3%A9sultats.jpg",
         "Vos résultats sont disponibles maintenant "),
-    PhotoItem1(
+    PhotoItem(
         "https://cck.rnu.tn/wp-content/uploads/2022/07/AO_SI-MESRS-thegem-blog-masonry.jpg",
         "Appel d'offres nationnal Aout 2022"),
-    PhotoItem1(
+    PhotoItem(
         "https://cdn-az.allevents.in/events5/banners/d8b89f57061fe1c51367dd16865f777be49c9d40dc8ad6d129f6a0ec19112d5c-rimg-w508-h720-gmir.jpg?v=1583520731",
         " حصة تثقيفية حول أبجديات الإسعافات لمجموعة من المتكونين بالمركز القطاعي للتكوين في الصيانة نابل من منظمة الهلال الأحمر الهيئة الجهوية بنابل يوم السبت 20 نوفمبر بقاعة التنشيط بالمبيت "),
-    PhotoItem1(
+    PhotoItem(
         "http://www.mon-diplome.fr/Diplome/700-332946-Diplome+de+Maintenance+Industrielle.jpg",
         "le dépôt des diplômes sera dans le mois de septembre 2022"),
-    PhotoItem1(
+    PhotoItem(
         "https://images.tokopedia.net/img/cache/500-square/product-1/2020/7/6/batch-upload/batch-upload_ee6ab488-dbd7-4110-95fd-898c7cf6abdf.jpg",
         "تعتزم إدارة المركز القطاعي للتكوين في الصيانة بنابل انشاء نادي شطرنج للمتكونين ينطلق نشاطه يوم الثلاثاء 19/10/2022"),
-    PhotoItem1(
+    PhotoItem(
         "https://media.elcinema.com/uploads/_315x420_daf42061982d6eff659c2dc1a12a259712c02ef63cf0290b9437283ba736f768.jpg",
         "بيك نعيش فيلم روائي تونسي للمخرج مهدي البرصاوي. تدور أحداث الفيلم في مدينة تطاوين بتونس سبتمبر 2011، ويحكي قصة زوجين يحاولان الحصول على متبرع بالكبد لابنهما، في ظل الأوضاع الاجتماعية والسياسية والاقتصادية في الفترة مابعد ثورة 2011."),
-    PhotoItem1("https://wallpaperaccess.com/full/1668956.png",
+    PhotoItem("https://wallpaperaccess.com/full/1668956.png",
         "Bonsoir, est ce que quelqu'un d'entre vous à trouver une carte d'identité s'il vous plaît?"),
   ];
 
@@ -119,7 +120,7 @@ class RouteTwo1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 71, 5, 57),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
         title: Text('Post'),
         actions: <Widget>[
           PopupMenuButton<String>(
@@ -135,8 +136,8 @@ class RouteTwo1 extends StatelessWidget {
                             context: context,
                             builder: (context) {
                               return AlertDialog(
-                                backgroundColor: Color.fromARGB(255, 20, 2, 18),
-                                title: Text('Are you sure?',
+                                backgroundColor: Color.fromARGB(255, 1, 14, 73),
+                                title: Text('Delete this element?',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 16.0,
@@ -157,11 +158,11 @@ class RouteTwo1 extends StatelessWidget {
                                     },
                                   ),
                                   MaterialButton(
-                                    color: Colors.red,
+                                    color: Color.fromARGB(255, 202, 211, 238),
                                     child: Text(
                                       'Yes',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Color.fromARGB(255, 5, 0, 78),
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18.0,
                                       ),
@@ -207,20 +208,24 @@ class RouteTwo1 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         GestureDetector(
-                            child: Icon(
-                          Icons.favorite,
-                          color: Colors.red,
-                          size: 30,
-                        )),
+                          child: Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                            size: 28,
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => likes()));
+                          },
+                        ),
                         SizedBox(
                           width: 10,
                         ),
                         Text(
                           "5",
                           style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18),
+                              color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -239,7 +244,7 @@ class RouteTwo1 extends StatelessWidget {
                             child: Icon(
                               Icons.comment,
                               color: Color.fromARGB(255, 17, 17, 17),
-                              size: 30.0,
+                              size: 28.0,
                             ),
                           ),
                           SizedBox(
@@ -249,8 +254,7 @@ class RouteTwo1 extends StatelessWidget {
                             "4",
                             style: TextStyle(
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18),
+                                fontWeight: FontWeight.bold),
                           ),
                         ]),
                   )
@@ -310,7 +314,7 @@ class ProfileHelpersAfterDelete with ChangeNotifier {
 
   User? userData = FirebaseAuth.instance.currentUser!;
 
-  Widget headerProfile1(BuildContext context, DocumentSnapshot snapshot) {
+  Widget headerProfile(BuildContext context, DocumentSnapshot snapshot) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
       width: MediaQuery.of(context).size.width,
@@ -347,7 +351,7 @@ class ProfileHelpersAfterDelete with ChangeNotifier {
                           icon: Icon(
                             Icons.add_a_photo,
                             size: 30,
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: Color.fromARGB(255, 3, 0, 39),
                           ),
                         ))
                   ],
@@ -358,7 +362,7 @@ class ProfileHelpersAfterDelete with ChangeNotifier {
                     'Cfm Nabeul',
                     // ' ${userData?.displayName}',
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 2, 4, 156),
                         fontWeight: FontWeight.bold,
                         fontSize: 16.0),
                   ),
@@ -384,7 +388,7 @@ class ProfileHelpersAfterDelete with ChangeNotifier {
 
                         // ignore: prefer_const_constructors
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 2, 4, 156),
                             fontWeight: FontWeight.bold,
                             fontSize: 12.0),
                       ),
@@ -407,7 +411,7 @@ class ProfileHelpersAfterDelete with ChangeNotifier {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 47, 18, 58),
+                            color: Color.fromARGB(255, 48, 117, 182),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -438,7 +442,7 @@ class ProfileHelpersAfterDelete with ChangeNotifier {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 47, 18, 58),
+                            color: Color.fromARGB(255, 48, 117, 182),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -471,7 +475,7 @@ class ProfileHelpersAfterDelete with ChangeNotifier {
                   padding: const EdgeInsets.only(top: 16.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 47, 18, 58),
+                        color: Color.fromARGB(255, 48, 117, 182),
                         borderRadius: BorderRadius.circular(15.0)),
                     height: 70.0,
                     width: 80.0,
@@ -506,27 +510,25 @@ class ProfileHelpersAfterDelete with ChangeNotifier {
     );
   }
 
-  Widget divider1() {
+  Widget divider() {
     return Center(
       child: SizedBox(
         height: 25.0,
-        width: 350.0,
+        width: 300.0,
         child: Divider(
-          color: Color.fromARGB(255, 184, 157, 182),
+          color: Color.fromARGB(255, 90, 72, 250),
         ),
       ),
     );
   }
 
-  Widget footerProfile1(BuildContext context, dynamic snapshot) {
+  Widget footerProfile(BuildContext context, dynamic snapshot) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           Container(
             child: RouteOne1(),
-
-            //child: Image.asset('images/test.jpg'),
             height: MediaQuery.of(context).size.height * 0.63,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
@@ -538,23 +540,4 @@ class ProfileHelpersAfterDelete with ChangeNotifier {
       ),
     );
   }
-
-  /* Widget middleProfile(BuildContext context, dynamic snapshot) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          child: Row(
-            children: [
-              TextButton(
-                  onPressed: (() {
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => Apprenant()));
-                  }),
-                  child: Text('Modifier Profile'))
-            ],
-          ),
-        )
-      ],
-    );*/
 }

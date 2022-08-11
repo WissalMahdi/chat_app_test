@@ -1,14 +1,14 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore, sized_box_for_whitespace, camel_case_types
 
-import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/commentsPage.dart';
 import 'package:chat_app_test/Espace_Admin/Profile_Admin/ProfilAdmin.dart';
+import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/commentsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
 
 //the feed box will have for parameters :
 // the user name , the user avatar, the pub date, the content text and content img
-Widget feedBox(String avatarUrl, String userName, String date,
+Widget feedBoxFormateur(String avatarUrl, String userName, String date,
     String contentText, String contentImg) {
   return Container(
       margin: const EdgeInsets.only(bottom: 20.0),
@@ -153,9 +153,7 @@ Widget feedBox(String avatarUrl, String userName, String date,
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    Get.to(TestMe());
-                                    //     navigatorKey.currentState
-                                    //       ?.pushReplacementNamed("TestMe");
+                                    Get.to(TestMeApp());
                                   },
                                   child: Icon(
                                     Icons.comment,

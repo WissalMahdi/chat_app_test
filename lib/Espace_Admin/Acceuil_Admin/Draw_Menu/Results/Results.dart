@@ -35,10 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         //backgroundColor: Color.fromARGB(255, 48, 47, 44),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 80, 77, 80),
+          backgroundColor: Color.fromARGB(255, 48, 117, 182),
           title: Text(
             "Results",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
           leading: IconButton(
               icon: const Icon(Icons.arrow_back),
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 40, 4, 54),
+                color: Color.fromARGB(255, 2, 18, 109),
                 child: ListTile(
                   minVerticalPadding: 25,
                   title: Text("Maintenance Industrielle (MID)",
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 61, 16, 57),
+                color: Color.fromARGB(255, 133, 156, 233),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("1ére Année MID",
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 100, 53, 100),
+                color: Color.fromARGB(255, 83, 98, 182),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("2éme Année MID",
@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 69, 28, 73),
+                color: Color.fromARGB(255, 84, 93, 219),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("3éme Année MID",
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 40, 4, 54),
+                color: Color.fromARGB(255, 2, 18, 109),
                 //  margin: EdgeInsets.all(10),
                 child: ListTile(
                   minVerticalPadding: 25,
@@ -132,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 61, 16, 57),
+                color: Color.fromARGB(255, 133, 156, 233),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("1ére Année EM",
@@ -149,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 100, 53, 100),
+                color: Color.fromARGB(255, 83, 98, 182),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("2éme Année EM",
@@ -166,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 69, 28, 73),
+                color: Color.fromARGB(255, 84, 93, 219),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("3éme Année EM",
@@ -189,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 40, 4, 54),
+                color: Color.fromARGB(255, 2, 18, 109),
                 //  margin: EdgeInsets.all(10),
                 child: ListTile(
                   minVerticalPadding: 25,
@@ -200,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 61, 16, 57),
+                color: Color.fromARGB(255, 133, 156, 233),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                     title: Text("1ére Année CEP",
@@ -216,7 +216,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 100, 53, 100),
+                color: Color.fromARGB(255, 83, 98, 182),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("2éme Année CEP",
@@ -233,7 +233,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 69, 28, 73),
+                color: Color.fromARGB(255, 84, 93, 219),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("3éme Année CEP",

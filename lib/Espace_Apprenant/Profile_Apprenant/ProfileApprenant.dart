@@ -13,7 +13,7 @@ class ProfileApprenant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromARGB(255, 230, 230, 230),
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
@@ -34,7 +34,7 @@ class ProfileApprenant extends StatelessWidget {
             },
           )
         ],
-        backgroundColor: Color.fromARGB(255, 134, 72, 158).withOpacity(0.4),
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
         title: RichText(
             text: TextSpan(
                 text: 'My',
@@ -46,7 +46,7 @@ class ProfileApprenant extends StatelessWidget {
               TextSpan(
                   text: 'Profile',
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0),
+                      color: Color.fromARGB(255, 0, 26, 141),
                       fontWeight: FontWeight.bold,
                       fontSize: 25.0))
             ])),
@@ -73,8 +73,6 @@ class ProfileApprenant extends StatelessWidget {
                     Provider.of<ProfileHelpersApprenant>(context, listen: false)
                         .headerProfile(
                             context, snapshot.data as DocumentSnapshot),
-                    //    Provider.of<ProfileHelpers>(context, listen: false)
-                    //      .middleProfile(context, snapshot),
                     Provider.of<ProfileHelpersApprenant>(context, listen: false)
                         .divider(),
                     Provider.of<ProfileHelpersApprenant>(context, listen: false)
@@ -86,7 +84,7 @@ class ProfileApprenant extends StatelessWidget {
           ),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.0),
-              color: Color.fromARGB(255, 219, 192, 228).withOpacity(0.6)),
+              color: Color.fromARGB(255, 197, 208, 238)),
         ),
       )),
     );
