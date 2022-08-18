@@ -1,15 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:chat_app_test/Espace_Admin/Profile_Admin/ProfilAdmin.dart';
-import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileApprenant.dart';
+import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/ProfileFormateur.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(likesAppr());
+  runApp(likesForma());
 }
 
 // ignore: camel_case_types, use_key_in_widget_constructors
-class likesAppr extends StatelessWidget {
+class likesForma extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(debugShowCheckedModeBanner: false, home: MyHomePage());
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => ProfileApprenant()));
+                    builder: (context) => ProfileFormateur()));
               }),
         ),
         body: ListView(

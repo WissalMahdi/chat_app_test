@@ -2,7 +2,7 @@
 
 import 'dart:io';
 
-import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileApprenant.dart';
+import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/ProfileFormateur.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
@@ -10,14 +10,14 @@ import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 import 'Edit_Profile.dart';
 
-class ProfileView extends StatefulWidget {
-  const ProfileView({Key? key}) : super(key: key);
+class ProfileViewForm extends StatefulWidget {
+  const ProfileViewForm({Key? key}) : super(key: key);
 
   @override
-  State<ProfileView> createState() => _ProfileViewState();
+  State<ProfileViewForm> createState() => _ProfileViewState();
 }
 
-class _ProfileViewState extends State<ProfileView> {
+class _ProfileViewState extends State<ProfileViewForm> {
   File? image;
   Future pickImage() async {
     try {
@@ -47,7 +47,18 @@ class _ProfileViewState extends State<ProfileView> {
           Expanded(
               child: Container(
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 155, 126, 155),
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                // ignore: prefer_const_
+                // literals_to_create_immutables
+                // ignore: prefer_const_literals_to_create_immutables
+                colors: [
+                  Color.fromARGB(255, 5, 26, 145),
+                  Color.fromARGB(255, 122, 183, 233),
+                  Color.fromARGB(255, 66, 92, 240),
+                ],
+              ),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20.0),
                 bottomRight: Radius.circular(20.0),
@@ -60,7 +71,7 @@ class _ProfileViewState extends State<ProfileView> {
                 IconButton(
                   onPressed: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => ProfileApprenant()));
+                        builder: (context) => ProfileFormateur()));
                   },
                   icon: Icon(Icons.close),
                   padding: EdgeInsets.fromLTRB(20, 0, 400, 20),
@@ -82,7 +93,7 @@ class _ProfileViewState extends State<ProfileView> {
                           ))
                         : ClipOval(
                             child: Image.network(
-                            'https://i.stack.imgur.com/l60Hf.png',
+                            "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                             width: 150,
                             height: 150,
                             fit: BoxFit.cover,
@@ -95,7 +106,7 @@ class _ProfileViewState extends State<ProfileView> {
                           icon: Icon(
                             Icons.add_a_photo,
                             size: 30,
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: Color.fromARGB(255, 252, 252, 252),
                           ),
                         ))
                   ],

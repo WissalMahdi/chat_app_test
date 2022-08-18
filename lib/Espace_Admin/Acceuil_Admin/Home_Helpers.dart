@@ -48,12 +48,24 @@ class HomeHelpers with ChangeNotifier {
     "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
     "https://images.unsplash.com/photo-1454988501794-2992f706932e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
     "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "https://img.superbesimages.com/si/bonne-semaine/bonne-semaine_010.jpg",
   ];
   Widget appBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 48, 117, 182),
       centerTitle: true,
-      // ignore: prefer_const_literals_to_create_immutables
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            // ignore: prefer_const_literals_to_create_immutables
+            colors: <Color>[
+              Color.fromARGB(255, 14, 43, 173),
+              Color.fromARGB(255, 135, 157, 255)
+            ],
+          ),
+        ),
+      ),
       actions: [
         IconButton(
             onPressed: (() {
@@ -206,7 +218,10 @@ class HomeHelpers with ChangeNotifier {
                 ""),
             feedBox(avatarUrl[2], "M.Saber_HJ", "1 h",
                 "y a pas du cours mécanique le 25-10-2022", storyUrl[2]),
-            feedBox(avatarUrl[1], "M.Amine_Hamdi", "à l'instant", text, ""),
+
+            feedBox(
+                avatarUrl[0], "CFM_Nabeul", "à l'instant", text, storyUrl[6]),
+            feedBox(avatarUrl[0], "CFM_Nabeul", "à l'instant", text, ""),
           ],
         ),
       ),

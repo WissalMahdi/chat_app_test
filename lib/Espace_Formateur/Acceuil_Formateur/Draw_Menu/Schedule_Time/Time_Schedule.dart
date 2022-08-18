@@ -14,10 +14,22 @@ class _fileState extends State<TimeSchedule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 167, 161, 161),
+      backgroundColor: Color.fromARGB(255, 218, 226, 236),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 61, 17, 55),
-        title: const Text('Emploi du temps TMMSI'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              // ignore: prefer_const_literals_to_create_immutables
+              colors: <Color>[
+                Color.fromARGB(255, 14, 43, 173),
+                Color.fromARGB(255, 135, 157, 255)
+              ],
+            ),
+          ),
+        ),
+        title: const Text('Time Schedule'),
         leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
@@ -42,7 +54,7 @@ class _fileState extends State<TimeSchedule> {
               height: 30,
             ),
             Text(
-              'Emploi du temps 2éme semaine',
+              'Half semester time Schedule',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             SizedBox(

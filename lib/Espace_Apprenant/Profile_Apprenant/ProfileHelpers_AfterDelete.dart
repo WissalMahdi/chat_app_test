@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/commentsPage.dart';
 import 'package:chat_app_test/Espace_Admin/Profile_Admin/likes.dart';
 import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileApprenant_After_delete.dart';
+import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/likes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -213,7 +214,7 @@ class RouteTwo1 extends StatelessWidget {
                           onTap: () {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                    builder: (context) => likes()));
+                                    builder: (context) => likesAppr()));
                           },
                         ),
                         SizedBox(
@@ -408,7 +409,7 @@ class ProfileHelpersAfterDeleteApp with ChangeNotifier {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 48, 117, 182),
+                            color: Color.fromARGB(255, 55, 89, 236),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -439,7 +440,7 @@ class ProfileHelpersAfterDeleteApp with ChangeNotifier {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 48, 117, 182),
+                            color: Color.fromARGB(255, 55, 89, 236),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -472,7 +473,7 @@ class ProfileHelpersAfterDeleteApp with ChangeNotifier {
                   padding: const EdgeInsets.only(top: 16.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 48, 117, 182),
+                        color: Color.fromARGB(255, 55, 89, 236),
                         borderRadius: BorderRadius.circular(15.0)),
                     height: 70.0,
                     width: 80.0,

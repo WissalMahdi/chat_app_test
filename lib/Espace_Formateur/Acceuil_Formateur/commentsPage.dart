@@ -1,16 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/UI_Espace_Formateur.dart';
 import 'package:comment_box/comment/comment.dart';
 import 'package:flutter/material.dart';
 
-import 'UI_Espace_Admin.dart';
-
-class TestMe extends StatefulWidget {
+class CommentsFormateur extends StatefulWidget {
   @override
   _TestMeState createState() => _TestMeState();
 }
 
-class _TestMeState extends State<TestMe> {
+class _TestMeState extends State<CommentsFormateur> {
   final formKey = GlobalKey<FormState>();
   final TextEditingController commentController = TextEditingController();
   List filedata = [
@@ -100,14 +99,14 @@ class _TestMeState extends State<TestMe> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => EspaceAdmin()));
+                  MaterialPageRoute(builder: (context) => EspaceFormateur()));
             }),
       ),
       // ignore: avoid_unnecessary_containers
       body: Container(
         child: CommentBox(
           userImage:
-              "https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg",
+              "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
           child: commentChild(filedata),
           labelText: 'Write a comment...',
           withBorder: false,
@@ -117,9 +116,9 @@ class _TestMeState extends State<TestMe> {
               print(commentController.text);
               setState(() {
                 var value = {
-                  'name': 'CFM Nabeul',
+                  'name': 'Riadh Hajji',
                   'pic':
-                      'https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg',
+                      "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                   'message': commentController.text
                 };
                 filedata.insert(0, value);

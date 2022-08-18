@@ -1,14 +1,17 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new, sized_box_for_whitespace, duplicate_ignore
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new, sized_box_for_whitespace
 
+import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/UI_Espace_Apprenant.dart';
+import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileHelpers_AfterDelete.dart';
 import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/UI_Espace_Formateur.dart';
-import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/ProfileHelpers.dart';
-import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/Update_Profile/ProfileView_UI.dart';
+import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/ProfileHelpers_AfterDelete.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ProfileFormateur extends StatelessWidget {
-  const ProfileFormateur({Key? key}) : super(key: key);
+import 'Update_Profile/ProfileView_UI.dart';
+
+class ProfileFormateurAfterDelete extends StatelessWidget {
+  const ProfileFormateurAfterDelete({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +61,7 @@ class ProfileFormateur extends StatelessWidget {
               TextSpan(
                   text: 'Profile',
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 26, 141),
+                      color: Color.fromARGB(255, 21, 1, 110),
                       fontWeight: FontWeight.bold,
                       fontSize: 25.0))
             ])),
@@ -82,12 +85,15 @@ class ProfileFormateur extends StatelessWidget {
               } else {
                 return new Column(
                   children: [
-                    Provider.of<ProfileHelpersFormateur>(context, listen: false)
+                    Provider.of<ProfileHelpersAfterDeleteForm>(context,
+                            listen: false)
                         .headerProfile(
                             context, snapshot.data as DocumentSnapshot),
-                    Provider.of<ProfileHelpersFormateur>(context, listen: false)
+                    Provider.of<ProfileHelpersAfterDeleteForm>(context,
+                            listen: false)
                         .divider(),
-                    Provider.of<ProfileHelpersFormateur>(context, listen: false)
+                    Provider.of<ProfileHelpersAfterDeleteForm>(context,
+                            listen: false)
                         .footerProfile(context, snapshot)
                   ],
                 );

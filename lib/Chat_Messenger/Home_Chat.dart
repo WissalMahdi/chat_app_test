@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, duplicate_ignore, avoid_unnecessary_containers, use_key_in_widget_constructors, avoid_print
 
-import 'package:chat_app_test/Espace_Admin/Acceuil_Admin/Home_Admin.dart';
-import 'package:chat_app_test/Espace_Admin/Profile_Admin/ProfilAdmin.dart';
 import 'package:chat_app_test/SplashScreen/splash_screen.dart';
 import 'package:chat_app_test/services/Auth.dart';
 import 'package:chat_app_test/services/database.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import '../Espace_Admin/Acceuil_Admin/Home_Admin.dart';
 import '../Helper_Functions_SharedPref/sharedpref_helper.dart';
 import 'UI_Chat.dart';
 
@@ -157,17 +156,27 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 56, 52, 52),
+      backgroundColor: Color.fromARGB(255, 214, 227, 240),
       appBar: AppBar(
-        title: Text('Messenger Clone'),
-        backgroundColor: Color.fromARGB(255, 53, 51, 51),
+        title: Text('Messenger'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: <Color>[
+                Color.fromARGB(255, 110, 127, 223),
+                Color.fromARGB(255, 8, 35, 158)
+              ],
+            ),
+          ),
+        ),
         leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => HomeAdmin()));
             }),
-        // ignore: prefer_const_literals_to_create_immutables
         actions: [
           InkWell(
             onTap: (() {
@@ -175,8 +184,8 @@ class _HomeState extends State<Home> {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      backgroundColor: Color.fromARGB(255, 20, 2, 18),
-                      title: Text('Log Out Of Trendy?',
+                      backgroundColor: Color.fromARGB(255, 1, 14, 73),
+                      title: Text('Log Out Of TikTalk?',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
@@ -197,11 +206,11 @@ class _HomeState extends State<Home> {
                           },
                         ),
                         MaterialButton(
-                          color: Colors.red,
+                          color: Color.fromARGB(255, 202, 211, 238),
                           child: Text(
                             'Yes',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 5, 0, 78),
                               fontWeight: FontWeight.bold,
                               fontSize: 18.0,
                             ),
@@ -250,7 +259,7 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: Colors.grey,
+                            color: Color.fromARGB(255, 44, 37, 37),
                             width: 1,
                             style: BorderStyle.solid),
                         borderRadius: BorderRadius.circular(24),
@@ -275,7 +284,7 @@ class _HomeState extends State<Home> {
                             },
                             child: Icon(
                               Icons.person_search,
-                              color: Colors.black,
+                              color: Color.fromARGB(255, 47, 17, 180),
                             ))
                       ],
                     ),
@@ -353,7 +362,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                   name,
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 55, 65, 163),
                     fontWeight: FontWeight.w900,
                   ),
                 ),
@@ -362,7 +371,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                   widget.lastMessage,
                   style: TextStyle(
                       fontSize: 16,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 71, 70, 70),
                       fontStyle: FontStyle.italic),
                 )
               ],

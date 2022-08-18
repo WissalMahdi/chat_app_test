@@ -47,7 +47,7 @@ class NavigationDrawer extends StatelessWidget {
       );
 
   Widget buildHeader(BuildContext context) => Material(
-        color: Color.fromARGB(255, 48, 117, 182),
+        color: Color.fromARGB(255, 55, 89, 236),
         child: InkWell(
           onTap: () {
             Navigator.of(context).pushReplacement(
@@ -118,12 +118,12 @@ class NavigationDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.tab_outlined),
+              leading: const Icon(Icons.menu_book),
               title: const Text('Courses',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               onTap: () {
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => Courses()));
+                    MaterialPageRoute(builder: (context) => CoursesF()));
               },
             ),
             const Divider(
@@ -144,7 +144,7 @@ class NavigationDrawer extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        backgroundColor: Color.fromARGB(255, 1, 14, 73),
+                        backgroundColor: Color.fromARGB(255, 21, 50, 179),
                         title: Text('Log Out Of TikTalk?',
                             style: TextStyle(
                                 color: Colors.white,

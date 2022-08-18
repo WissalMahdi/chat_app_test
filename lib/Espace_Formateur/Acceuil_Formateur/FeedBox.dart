@@ -2,6 +2,7 @@
 
 import 'package:chat_app_test/Espace_Admin/Profile_Admin/ProfilAdmin.dart';
 import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/commentsPage.dart';
+import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/commentsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
@@ -153,7 +154,7 @@ Widget feedBoxFormateur(String avatarUrl, String userName, String date,
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    Get.to(TestMeApp());
+                                    Get.to(CommentsFormateur());
                                   },
                                   child: Icon(
                                     Icons.comment,

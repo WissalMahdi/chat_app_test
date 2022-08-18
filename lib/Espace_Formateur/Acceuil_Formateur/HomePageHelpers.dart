@@ -19,7 +19,7 @@ class HomePageHelpersFormateur with ChangeNotifier {
           pageController.jumpToPage(val);
           notifyListeners();
         },
-        backgroundColor: Color.fromARGB(255, 48, 117, 182),
+        backgroundColor: Color.fromARGB(255, 63, 106, 245),
         items: [
           CustomNavigationBarItem(
               icon: Icon(Icons.home_outlined),

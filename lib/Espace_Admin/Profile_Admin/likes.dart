@@ -28,7 +28,19 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Color.fromARGB(255, 239, 240, 253),
         appBar: AppBar(
           title: Text("Likes"),
-          backgroundColor: Color.fromARGB(255, 48, 117, 182),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                // ignore: prefer_const_literals_to_create_immutables
+                colors: <Color>[
+                  Color.fromARGB(255, 14, 43, 173),
+                  Color.fromARGB(255, 135, 157, 255)
+                ],
+              ),
+            ),
+          ),
           leading: IconButton(
               icon: const Icon(Icons.arrow_back),
               onPressed: () {

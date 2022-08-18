@@ -35,8 +35,23 @@ class FlutterDatePickerExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 48, 117, 182),
-        title: const Text('Meetings Calendar',style: TextStyle(
+ flexibleSpace: Container(
+          // ignore: prefer_const_constructors
+          decoration: BoxDecoration(
+            // ignore: prefer_const_constructors
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              // ignore: prefer_const_literals_to_create_immutables
+              colors: <Color>[
+                // ignore: prefer_const_constructors
+                Color.fromARGB(255, 14, 43, 173),
+                // ignore: prefer_const_constructors
+                Color.fromARGB(255, 135, 157, 255)
+              ],
+            ),
+          ),
+        ),        title: const Text('Training Calendar',style: TextStyle(
               fontWeight: FontWeight.bold,
             )),
          leading: IconButton(
@@ -54,18 +69,18 @@ class FlutterDatePickerExample extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Text(
-              ' Create Meeting',
+              ' Create Event',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 22.0, color: Color.fromARGB(255, 48, 117, 182), fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 20,
             ),
-            buildTextField(controller: meetingName, hint: 'Enter Meeting Name'),
+            buildTextField(controller: meetingName, hint: 'Enter Event Name'),
             const SizedBox(
               height: 20,
             ),
-            buildTextField(controller: meetingLink, hint: 'Enter Meeting Link'),
+            buildTextField(controller: meetingLink, hint: 'Enter Event Link'),
             const SizedBox(
               height: 10,
             ),
@@ -205,7 +220,7 @@ class FlutterDatePickerExample extends StatelessWidget {
            style: ElevatedButton.styleFrom(shape:   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 // ignore: prefer_const_constructors
-                primary: Color.fromARGB(255, 57, 127, 194),),),
+                primary: Color.fromARGB(255, 47, 91, 214),),),
           ],
         ),
         ),

@@ -53,7 +53,19 @@ class HomeHelpersApprenant with ChangeNotifier {
   ];
   Widget appBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 48, 117, 182),
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            // ignore: prefer_const_literals_to_create_immutables
+            colors: <Color>[
+              Color.fromARGB(255, 14, 43, 173),
+              Color.fromARGB(255, 135, 157, 255)
+            ],
+          ),
+        ),
+      ),
       centerTitle: true,
       // ignore: prefer_const_literals_to_create_immutables
       actions: [
@@ -167,18 +179,13 @@ class HomeHelpersApprenant with ChangeNotifier {
             //Now let's create the news feed
             //first we will make the custom container of the feed
             //Ok let's test our widget
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => ProfileAdmin()));
-              },
-              child: feedBoxApprenant(
-                  avatarUrl[0],
-                  "CFM_Nabeul",
-                  "1 j",
-                  "Bonjour à tous, Vos emplois du temps sera disponible dès maintenant pour l'année 2022/2023.",
-                  ""),
-            ),
+            feedBoxApprenant(
+                avatarUrl[0],
+                "CFM_Nabeul",
+                "1 j",
+                "Bonjour à tous, Vos emplois du temps sera disponible dès maintenant pour l'année 2022/2023.",
+                ""),
+
             feedBoxApprenant(
                 avatarUrl[3],
                 "Mr.Ahmed Bousetta",

@@ -3,40 +3,39 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:chat_app_test/Espace_Apprenant/Acceuil_Apprenant/Draw_Menu/Grades/Grades.dart';
 import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/Draw_Menu/Courses/Courses.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 
-class FilesPage extends StatefulWidget {
+class CoursesFilesPage extends StatefulWidget {
   final List<PlatformFile> files;
   final ValueChanged<PlatformFile> onOpenedFile;
 
-  const FilesPage({
+  const CoursesFilesPage({
     Key? key,
     required this.files,
     required this.onOpenedFile,
   }) : super(key: key);
 
   @override
-  State<FilesPage> createState() => _FilesPageState();
+  State<CoursesFilesPage> createState() => _FilesPageState();
 }
 
-class _FilesPageState extends State<FilesPage> {
+class _FilesPageState extends State<CoursesFilesPage> {
   Random _random = Random();
 
   List<List<Color>> gradientColors = [];
   List<Color> gradientFirst = [
-    Color.fromARGB(255, 63, 11, 63),
-    Color.fromARGB(255, 102, 67, 134),
-    Color.fromARGB(255, 85, 25, 90)
+    Color.fromARGB(255, 8, 11, 230),
+    Color.fromARGB(255, 74, 50, 209),
+    Color.fromARGB(255, 155, 172, 202)
   ];
   List<Color> gradientSecond = [
-    Color.fromARGB(255, 141, 40, 119),
-    Color.fromARGB(255, 194, 151, 181),
-    Color.fromARGB(255, 160, 43, 135)
+    Color.fromARGB(255, 40, 101, 141),
+    Color.fromARGB(255, 19, 50, 117),
+    Color.fromARGB(255, 7, 32, 177)
   ];
   List<Color> gradientThird = [
     Color(0xFFffffff),
@@ -49,9 +48,9 @@ class _FilesPageState extends State<FilesPage> {
     Color.fromARGB(255, 12, 171, 230)
   ];
   List<Color> gradientFifth = [
-    Color.fromARGB(255, 105, 64, 10),
-    Color.fromARGB(255, 216, 167, 178),
-    Color.fromARGB(255, 175, 101, 79)
+    Color.fromARGB(255, 12, 10, 105),
+    Color.fromARGB(255, 247, 245, 245),
+    Color.fromARGB(255, 33, 3, 209)
   ];
 
   @override
@@ -69,9 +68,20 @@ class _FilesPageState extends State<FilesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 206, 204, 204),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 80, 77, 80),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              // ignore: prefer_const_literals_to_create_immutables
+              colors: <Color>[
+                Color.fromARGB(255, 14, 43, 173),
+                Color.fromARGB(255, 135, 157, 255)
+              ],
+            ),
+          ),
+        ),
         title: const Text("Add Courses",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         leading: IconButton(
@@ -79,7 +89,7 @@ class _FilesPageState extends State<FilesPage> {
             iconSize: 25,
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => Courses()));
+                  MaterialPageRoute(builder: (context) => CoursesF()));
             }),
         centerTitle: true,
       ),
@@ -108,7 +118,7 @@ class _FilesPageState extends State<FilesPage> {
           final newFile = await saveFilePermanently(file);
         },
         child: const Icon(Icons.add),
-        backgroundColor: Color.fromARGB(255, 65, 63, 63),
+        backgroundColor: Color.fromARGB(255, 20, 53, 197),
       ),
     );
   }
@@ -121,7 +131,7 @@ class _FilesPageState extends State<FilesPage> {
 
   void openFiles(List<PlatformFile> files) =>
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => FilesPage(
+          builder: (context) => CoursesFilesPage(
                 files: files,
                 onOpenedFile: openFile,
               )));

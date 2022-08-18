@@ -1,20 +1,21 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/Draw_Menu/Courses/Courses_Files_Page.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../UI_Espace_Formateur.dart';
-import 'Courses_Files_Page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class Courses extends StatelessWidget {
+// ignore: use_key_in_widget_constructors
+class CoursesF extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Courses',
+      title: 'Grades',
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
@@ -31,9 +32,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 2, 5, 8),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 80, 77, 80),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                // ignore: prefer_const_literals_to_create_immutables
+                colors: <Color>[
+                  Color.fromARGB(255, 14, 43, 173),
+                  Color.fromARGB(255, 135, 157, 255)
+                ],
+              ),
+            ),
+          ),
           title: Text(
             "Courses",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -52,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 88, 85, 77),
+                color: Color.fromARGB(255, 2, 18, 109),
                 child: ListTile(
                   minVerticalPadding: 25,
                   title: Text("Maintenance Industrielle (MID)",
@@ -62,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 75, 64, 74),
+                color: Color.fromARGB(255, 133, 156, 233),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("1ére Année MID",
@@ -70,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => CoursesFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
@@ -85,8 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(
-                    255, 88, 85, 77), //  margin: EdgeInsets.all(10),
+                color: Color.fromARGB(255, 2, 18, 109),
+                //  margin: EdgeInsets.all(10),
                 child: ListTile(
                   minVerticalPadding: 25,
                   title: Text("Electricité Et Maintenance (EM)",
@@ -96,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 75, 64, 74),
+                color: Color.fromARGB(255, 84, 93, 219),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("3éme Année EM",
@@ -104,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => CoursesFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));
@@ -119,8 +131,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(
-                    255, 88, 85, 77), //  margin: EdgeInsets.all(10),
+                color: Color.fromARGB(255, 2, 18, 109),
+                //  margin: EdgeInsets.all(10),
                 child: ListTile(
                   minVerticalPadding: 25,
                   title: Text("Climatisation Et Plomberie (CEP)",
@@ -130,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 139, 122, 100),
+                color: Color.fromARGB(255, 83, 98, 182),
                 margin: EdgeInsets.all(10),
                 child: ListTile(
                   title: Text("2éme Année CEP",
@@ -138,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => FilesPage(
+                        builder: (context) => CoursesFilesPage(
                               files: const [],
                               onOpenedFile: (PlatformFile value) {},
                             )));

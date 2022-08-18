@@ -35,7 +35,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         //backgroundColor: Color.fromARGB(255, 48, 47, 44),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 48, 117, 182),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                // ignore: prefer_const_literals_to_create_immutables
+                colors: <Color>[
+                  Color.fromARGB(255, 14, 43, 173),
+                  Color.fromARGB(255, 135, 157, 255)
+                ],
+              ),
+            ),
+          ),
           title: Text(
             "Results",
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),

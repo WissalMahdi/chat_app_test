@@ -71,8 +71,20 @@ class _CustomTableCalendarState extends State<CustomTableCalendar> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 219, 223, 226),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 48, 117, 182),
-        title: const Text('Events & Training Calendar',
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              // ignore: prefer_const_literals_to_create_immutables
+              colors: <Color>[
+                Color.fromARGB(255, 14, 43, 173),
+                Color.fromARGB(255, 135, 157, 255)
+              ],
+            ),
+          ),
+        ),
+        title: const Text('Events & Trainings Calendar',
             style: TextStyle(
               fontWeight: FontWeight.bold,
             )),

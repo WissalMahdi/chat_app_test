@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names
 
 import 'package:chat_app_test/Espace_Apprenant/Profile_Apprenant/ProfileApprenant.dart';
+import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/ProfileFormateur.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -100,7 +101,10 @@ class _ManageProfileState extends State<EditProfile> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 185, 115, 158)),
+                  minimumSize: const Size(200, 40),
+                  shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                  primary: Color.fromARGB(255, 61, 108, 236)),
               onPressed: () {
                 // if (emailController.text.isNotEmpty) {
                 if (user!.displayName == null) {
@@ -119,14 +123,23 @@ class _ManageProfileState extends State<EditProfile> {
                   showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                            title: Text('Failed'),
+                            title: Text(
+                              'Failed',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
                             content: Text('No data to update'),
                             actions: [
                               TextButton(
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
-                                  child: Text('OK'))
+                                  child: Text(
+                                    'OK',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ))
                             ],
                           ));
                 } else if (PasswordController.text.isNotEmpty ||
@@ -143,16 +156,24 @@ class _ManageProfileState extends State<EditProfile> {
                                     Navigator.of(context).pushReplacement(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                ProfileApprenant()));
+                                                ProfileFormateur()));
                                   },
-                                  child: Text('OK'))
+                                  child: Text(
+                                    'OK',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ))
                             ],
                           ));
                 }
 
                 _clearAll();
               },
-              child: Text('Edit'),
+              child: Text(
+                'Edit',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
           ],
         ),

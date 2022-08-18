@@ -32,7 +32,19 @@ class _MyGridScreenState extends State<MyGridScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Time Schedule"),
-        backgroundColor: Color.fromARGB(255, 48, 117, 182),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              // ignore: prefer_const_literals_to_create_immutables
+              colors: <Color>[
+                Color.fromARGB(255, 14, 43, 173),
+                Color.fromARGB(255, 135, 157, 255)
+              ],
+            ),
+          ),
+        ),
         leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             iconSize: 25,

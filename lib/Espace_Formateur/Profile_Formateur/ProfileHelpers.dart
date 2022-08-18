@@ -1,6 +1,9 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore, avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_new, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, unused_local_variable, avoid_print
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_new, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, unused_local_variable, avoid_print, non_constant_identifier_names
 
 import 'dart:io';
+
+import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/commentsPage.dart';
+import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/likes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +11,8 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
+
+import 'ProfileFormateur_After_delete.dart';
 
 void main() async {
   runApp(
@@ -26,50 +31,46 @@ class PhotoItem {
 
 class RouteOne extends StatelessWidget {
   final List<PhotoItem> _items = [
+    PhotoItem("http://www.fsjegj.rnu.tn/Fr/upload/1572960712.jpg",
+        "Formation terminée avec succès merci chers éléves"),
     PhotoItem(
         "https://images.unsplash.com/photo-1553873002-785d775854c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "Il ya un multimétre disparu,est ce que quelqu'un de vous trouve-il?"),
+        "Il ya un multimétre disparu,est ce que quelqu'un de vous trouve-il s'il vous plait?"),
+    PhotoItem("http://www.fsjegj.rnu.tn/Fr/upload/1617869296.jpg",
+        "إحياء الذكرى الخامسة والأربعين ليوم الأرض"),
     PhotoItem(
-        "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "Classe EM31, vous devez préparez le TP d'electrique (Compte rendu et simulation) pour la semaine prochaine(c'est noté) "),
-    PhotoItem(
-        "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
-        "Pouvez-vous faire une installation parfaite de plomberie comme ça montre cette figure? :D"),
+        "https://www.challenges.tn/wp-content/uploads/2018/11/UPSAT-1.jpg", ""),
     PhotoItem(
         "https://images.unsplash.com/photo-1454988501794-2992f706932e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
+        "درس افتتاحي للسنة الجماعية 2022/2023 تحت عنوان التمييز الايجابي 25/10/2022"),
+    PhotoItem(
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1gx0mywIPxRtBhh8n_nCOMM5Uxex22KTj3w&usqp=CAU",
+        "merci pour cette belle année messieurs et mesdames"),
+    PhotoItem(
+        "https://www.enicbcmed.eu/sites/default/files/styles/image_style_slider/public/2022-01/MYSEA%20tunisie_0.jpg?itok=pwMKi3wD",
         ""),
+    PhotoItem("https://orientini.com/uploads/csfm_nabeul.jpg", ""),
     PhotoItem(
-        "https://images.unsplash.com/photo-1606676539940-12768ce0e762?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        "Si quelqu'un d'entre vous avez une perceuse, il vaut mieux qu'il l'apportait pour le TP car le nombre de perceuses qu'on a possèdé n'est pas suffisant"),
+        "https://www.lacroixblanche.org/wp-content/uploads/2020/07/R%C3%A9sultats.jpg",
+        "Vos résultats sont disponibles maintenant "),
     PhotoItem(
-        "https://images.unsplash.com/photo-1620332114059-c88fe9862928?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1279&q=80",
-        ""),
+        "https://cck.rnu.tn/wp-content/uploads/2022/07/AO_SI-MESRS-thegem-blog-masonry.jpg",
+        "Appel d'offres nationnal Aout 2022"),
     PhotoItem(
-        "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        "ELC 22, on va réaliser une installation pour l'armoire électrique comme montre cette figure pour demain"),
+        "https://cdn-az.allevents.in/events5/banners/d8b89f57061fe1c51367dd16865f777be49c9d40dc8ad6d129f6a0ec19112d5c-rimg-w508-h720-gmir.jpg?v=1583520731",
+        " حصة تثقيفية حول أبجديات الإسعافات لمجموعة من المتكونين بالمركز القطاعي للتكوين في الصيانة نابل من منظمة الهلال الأحمر الهيئة الجهوية بنابل يوم السبت 20 نوفمبر بقاعة التنشيط بالمبيت "),
     PhotoItem(
-        "https://images.unsplash.com/photo-1563456019560-2b37aa7ad890?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
-        ""),
+        "http://www.mon-diplome.fr/Diplome/700-332946-Diplome+de+Maintenance+Industrielle.jpg",
+        "le dépôt des diplômes sera dans le mois de septembre 2022"),
     PhotoItem(
-        "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "Classe MID, est-ce que vous avez terminé ce TP? "),
+      "https://www.jeuneafrique.com/medias/2018/05/09/tunisie-universits-payantes-592x296-1525868742.jpg",
+      "",
+    ),
     PhotoItem(
-        "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
-        "Classe CEP, vos cours seront disponibles dès qu'aujourd'hui"),
-    PhotoItem(
-        "https://images.unsplash.com/photo-1527427337751-fdca2f128ce5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "Classe MID, N'oubliez pas de coder les exercices de Python pour la séance de demain"),
-    PhotoItem(
-        "https://images.unsplash.com/photo-1509390144018-eeaf65052242?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-        "Classe EM1, on a une visite à STEG'N demain à 8h30 préparer vous bien"),
-    PhotoItem(
-        "https://images.unsplash.com/photo-1620214819239-704eb97df587?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
-        "Classe EM21, Nouvelle matiére d'energitique pour l'année prochaine"),
-    PhotoItem(
-        "https://images.unsplash.com/photo-1602267774924-38124c047174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "https://www.tunisienumerique.com/wp-content/uploads/Photo-0134-1.jpg",
         ""),
     PhotoItem("https://wallpaperaccess.com/full/1668956.png",
-        "Bonsoir, est ce que quelqu'un d'entre vous à trouver une carte d'identité s'il vous plaît?"),
+        "Je Serai absent toute la semaine, on va faire un rattrapage dès que possible"),
   ];
 
   @override
@@ -111,7 +112,6 @@ class RouteOne extends StatelessWidget {
 class RouteTwo extends StatelessWidget {
   final String image;
   final String name;
-
   RouteTwo({Key? key, required this.image, required this.name})
       : super(key: key);
 
@@ -119,8 +119,81 @@ class RouteTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 71, 5, 57),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              // ignore: prefer_const_literals_to_create_immutables
+              colors: <Color>[
+                Color.fromARGB(255, 14, 43, 173),
+                Color.fromARGB(255, 135, 157, 255)
+              ],
+            ),
+          ),
+        ),
         title: Text('Post'),
+        actions: <Widget>[
+          PopupMenuButton<String>(
+            onSelected: handleClick,
+            itemBuilder: (BuildContext context) {
+              return {'Delete'}.map((String choice) {
+                return PopupMenuItem<String>(
+                    value: choice,
+                    child: GestureDetector(
+                        child: Text(choice),
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                backgroundColor: Color.fromARGB(255, 1, 14, 73),
+                                title: Text('Delete this element?',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold)),
+                                actions: [
+                                  MaterialButton(
+                                    child: Text(
+                                      'No',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18.0,
+                                          decoration: TextDecoration.underline,
+                                          decorationColor: Colors.white),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                  MaterialButton(
+                                    color: Color.fromARGB(255, 202, 211, 238),
+                                    child: Text(
+                                      'Yes',
+                                      style: TextStyle(
+                                        color: Color.fromARGB(255, 5, 0, 78),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProfileFormateurAfterDelete()));
+                                    },
+                                  )
+                                ],
+                              );
+                            },
+                          );
+                        }));
+              }).toList();
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -130,6 +203,74 @@ class RouteTwo extends StatelessWidget {
               width: double.infinity,
               child: Image(
                 image: NetworkImage(image),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 80.0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        GestureDetector(
+                          child: Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                            size: 28,
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => likesForma()));
+                          },
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "5",
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 100.0,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          CommentsFormateur()));
+                            },
+                            child: Icon(
+                              Icons.comment,
+                              color: Color.fromARGB(255, 17, 17, 17),
+                              size: 28.0,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "4",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ]),
+                  )
+                ],
               ),
             ),
           ),
@@ -147,6 +288,15 @@ class RouteTwo extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void handleClick(String value) {
+    switch (value) {
+      case 'Delete':
+        break;
+      case 'Update':
+        break;
+    }
   }
 }
 
@@ -200,7 +350,7 @@ class ProfileHelpersFormateur with ChangeNotifier {
                           ))
                         : ClipOval(
                             child: Image.network(
-                            "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                            "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                             width: 120,
                             height: 120,
                             fit: BoxFit.cover,
@@ -213,7 +363,7 @@ class ProfileHelpersFormateur with ChangeNotifier {
                           icon: Icon(
                             Icons.add_a_photo,
                             size: 30,
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: Colors.white,
                           ),
                         ))
                   ],
@@ -224,7 +374,7 @@ class ProfileHelpersFormateur with ChangeNotifier {
                     'Riadh Hajji',
                     // ' ${userData?.displayName}',
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 2, 4, 156),
                         fontWeight: FontWeight.bold,
                         fontSize: 16.0),
                   ),
@@ -250,7 +400,7 @@ class ProfileHelpersFormateur with ChangeNotifier {
 
                         // ignore: prefer_const_constructors
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 2, 4, 156),
                             fontWeight: FontWeight.bold,
                             fontSize: 12.0),
                       ),
@@ -273,7 +423,7 @@ class ProfileHelpersFormateur with ChangeNotifier {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 47, 18, 58),
+                            color: Color.fromARGB(255, 55, 89, 236),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -281,7 +431,7 @@ class ProfileHelpersFormateur with ChangeNotifier {
                           // ignore: prefer_const_literals_to_create_immutables
                           children: [
                             Text(
-                              '15',
+                              '20',
                               // ignore: prefer_const_constructors
                               style: TextStyle(
                                   color: Colors.white,
@@ -304,7 +454,7 @@ class ProfileHelpersFormateur with ChangeNotifier {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 47, 18, 58),
+                            color: Color.fromARGB(255, 55, 89, 236),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -337,7 +487,7 @@ class ProfileHelpersFormateur with ChangeNotifier {
                   padding: const EdgeInsets.only(top: 16.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 47, 18, 58),
+                        color: Color.fromARGB(255, 55, 89, 236),
                         borderRadius: BorderRadius.circular(15.0)),
                     height: 70.0,
                     width: 80.0,
@@ -345,7 +495,7 @@ class ProfileHelpersFormateur with ChangeNotifier {
                       // ignore: prefer_const_literals_to_create_immutables
                       children: [
                         Text(
-                          '20',
+                          '15',
                           // ignore: prefer_const_constructors
                           style: TextStyle(
                               color: Colors.white,
@@ -376,9 +526,9 @@ class ProfileHelpersFormateur with ChangeNotifier {
     return Center(
       child: SizedBox(
         height: 25.0,
-        width: 350.0,
+        width: 300.0,
         child: Divider(
-          color: Color.fromARGB(255, 184, 157, 182),
+          color: Color.fromARGB(255, 90, 72, 250),
         ),
       ),
     );
@@ -391,8 +541,6 @@ class ProfileHelpersFormateur with ChangeNotifier {
         children: [
           Container(
             child: RouteOne(),
-
-            //child: Image.asset('images/test.jpg'),
             height: MediaQuery.of(context).size.height * 0.63,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
@@ -404,23 +552,4 @@ class ProfileHelpersFormateur with ChangeNotifier {
       ),
     );
   }
-
-  /* Widget middleProfile(BuildContext context, dynamic snapshot) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          child: Row(
-            children: [
-              TextButton(
-                  onPressed: (() {
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => Apprenant()));
-                  }),
-                  child: Text('Modifier Profile'))
-            ],
-          ),
-        )
-      ],
-    );*/
 }

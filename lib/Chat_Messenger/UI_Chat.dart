@@ -96,8 +96,8 @@ class _ChatScreenState extends State<ChatScreen> {
                   topRight: Radius.circular(24),
                 ),
                 color: sendByMe
-                    ? Color.fromARGB(255, 166, 132, 197)
-                    : Color.fromARGB(255, 238, 235, 235)),
+                    ? Color.fromARGB(255, 52, 77, 221)
+                    : Color.fromARGB(255, 203, 218, 252)),
             padding: EdgeInsets.all(16),
             child: Text(
               message,
@@ -150,11 +150,26 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 30, 26, 41),
+      backgroundColor: Color.fromARGB(255, 225, 233, 247),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 27, 19, 31),
         title: Text(widget.name),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: <Color>[
+                Color.fromARGB(255, 170, 181, 245),
+                Color.fromARGB(255, 4, 40, 201)
+              ],
+            ),
+          ),
+        ),
       ),
+      /*appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 48, 117, 182),
+        title: Text(widget.name),
+      ),*/
       body: Container(
           child: Stack(
         children: [
@@ -162,7 +177,7 @@ class _ChatScreenState extends State<ChatScreen> {
           Container(
               alignment: Alignment.bottomCenter,
               child: Container(
-                color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.8),
+                color: Color.fromARGB(255, 200, 214, 235),
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: Row(
                   children: [
@@ -177,7 +192,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             border: InputBorder.none,
                             hintText: "Type a message",
                             hintStyle: TextStyle(
-                                color: Color.fromARGB(255, 30, 4, 71)
+                                color: Color.fromARGB(255, 25, 8, 179)
                                     .withOpacity(0.6))),
                       ),
                     ),
@@ -187,7 +202,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       },
                       child: Icon(
                         Icons.send,
-                        color: Color.fromARGB(255, 83, 50, 136),
+                        color: Color.fromARGB(255, 9, 6, 168),
                       ),
                     )
                   ],

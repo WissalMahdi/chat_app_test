@@ -123,7 +123,19 @@ class RouteTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 48, 117, 182),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              // ignore: prefer_const_literals_to_create_immutables
+              colors: <Color>[
+                Color.fromARGB(255, 14, 43, 173),
+                Color.fromARGB(255, 135, 157, 255)
+              ],
+            ),
+          ),
+        ),
         title: Text('Post'),
         actions: <Widget>[
           PopupMenuButton<String>(
@@ -414,7 +426,7 @@ class ProfileHelpers with ChangeNotifier {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 48, 117, 182),
+                            color: Color.fromARGB(255, 55, 89, 236),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -445,7 +457,7 @@ class ProfileHelpers with ChangeNotifier {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 48, 117, 182),
+                            color: Color.fromARGB(255, 55, 89, 236),
                             borderRadius: BorderRadius.circular(15.0)),
                         height: 70.0,
                         width: 80.0,
@@ -478,7 +490,7 @@ class ProfileHelpers with ChangeNotifier {
                   padding: const EdgeInsets.only(top: 16.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 48, 117, 182),
+                        color: Color.fromARGB(255, 55, 89, 236),
                         borderRadius: BorderRadius.circular(15.0)),
                     height: 70.0,
                     width: 80.0,

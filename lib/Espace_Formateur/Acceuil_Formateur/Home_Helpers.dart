@@ -50,7 +50,19 @@ class HomeHelpersFormateur with ChangeNotifier {
   ];
   Widget appBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 48, 117, 182),
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            // ignore: prefer_const_literals_to_create_immutables
+            colors: <Color>[
+              Color.fromARGB(255, 14, 43, 173),
+              Color.fromARGB(255, 135, 157, 255)
+            ],
+          ),
+        ),
+      ),
       centerTitle: true,
       // ignore: prefer_const_literals_to_create_immutables
       actions: [
@@ -124,7 +136,7 @@ class HomeHelpersFormateur with ChangeNotifier {
                           },
                           child: CircleAvatar(
                             radius: 25.0,
-                            backgroundImage: NetworkImage(avatarUrl[0]),
+                            backgroundImage: NetworkImage(avatarUrl[4]),
                           ),
                         ),
                         SizedBox(
@@ -206,7 +218,7 @@ class HomeHelpersFormateur with ChangeNotifier {
             feedBoxFormateur(avatarUrl[2], "M.Saber_HJ", "1 h",
                 "y a pas du cours mécanique le 25-10-2022", storyUrl[2]),
             feedBoxFormateur(
-                avatarUrl[1], "M.Amine_Hamdi", "à l'instant", text, ""),
+                avatarUrl[4], "Mr.Riadh Hajji", "à l'instant", text, ""),
           ],
         ),
       ),

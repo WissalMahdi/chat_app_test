@@ -4,6 +4,7 @@ import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/HomePageHelpers
 import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/Home_Helpers.dart';
 import 'package:chat_app_test/Espace_Formateur/Acceuil_Formateur/UploadPost.dart';
 import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/ProfileHelpers.dart';
+import 'package:chat_app_test/Espace_Formateur/Profile_Formateur/ProfileHelpers_AfterDelete.dart';
 import 'package:chat_app_test/SplashScreen/splash_screen.dart';
 import 'package:chat_app_test/services/fireBaseOperations.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -54,6 +55,8 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => UploadPostFormateur()),
           ChangeNotifierProvider(create: (_) => ProfileHelpersAfterDelete()),
           ChangeNotifierProvider(create: (_) => ProfileHelpersAfterDeleteApp()),
+          ChangeNotifierProvider(
+              create: (_) => ProfileHelpersAfterDeleteForm()),
         ]);
   }
 }    

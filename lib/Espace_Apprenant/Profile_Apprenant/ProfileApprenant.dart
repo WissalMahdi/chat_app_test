@@ -34,7 +34,19 @@ class ProfileApprenant extends StatelessWidget {
             },
           )
         ],
-        backgroundColor: Color.fromARGB(255, 48, 117, 182),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              // ignore: prefer_const_literals_to_create_immutables
+              colors: <Color>[
+                Color.fromARGB(255, 14, 43, 173),
+                Color.fromARGB(255, 135, 157, 255)
+              ],
+            ),
+          ),
+        ),
         title: RichText(
             text: TextSpan(
                 text: 'My',

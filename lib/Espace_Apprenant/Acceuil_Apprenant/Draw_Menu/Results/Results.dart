@@ -21,7 +21,19 @@ class _TableExample extends State<Results> {
       home: Scaffold(
           backgroundColor: Color.fromARGB(255, 214, 223, 233),
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 48, 117, 182),
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  colors: <Color>[
+                    Color.fromARGB(255, 14, 43, 173),
+                    Color.fromARGB(255, 135, 157, 255)
+                  ],
+                ),
+              ),
+            ),
             title: const Text('Result Page'),
             leading: IconButton(
                 icon: const Icon(Icons.arrow_back),

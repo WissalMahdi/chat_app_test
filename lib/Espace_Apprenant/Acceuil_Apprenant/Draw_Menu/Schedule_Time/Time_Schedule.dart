@@ -17,7 +17,19 @@ class _fileState extends State<TimeSchedule> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 218, 226, 236),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 48, 117, 182),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              // ignore: prefer_const_literals_to_create_immutables
+              colors: <Color>[
+                Color.fromARGB(255, 14, 43, 173),
+                Color.fromARGB(255, 135, 157, 255)
+              ],
+            ),
+          ),
+        ),
         title: const Text('Time Schedule EI1'),
         leading: IconButton(
             icon: const Icon(Icons.arrow_back),
