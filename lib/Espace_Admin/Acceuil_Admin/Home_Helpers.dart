@@ -193,7 +193,7 @@ class HomeHelpers with ChangeNotifier {
                 avatarUrl[0],
                 "CFM_Nabeul",
                 "9 h",
-                " un événement sera programmé sur 3 jours pour la semaine prochaine, vous pouvez le trouver dans les événements disponibless ",
+                " un événement sera programmé sur 3 jours pour la semaine prochaine, vous pouvez le trouver dans les événements disponibles ",
                 ""),
             feedBox(
                 avatarUrl[4],
